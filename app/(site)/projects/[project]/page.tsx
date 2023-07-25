@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { getSingleProject } from "@/sanity/sanity.query";
+import { getSingleProject } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import fallBackImage from "@/public/project.png";

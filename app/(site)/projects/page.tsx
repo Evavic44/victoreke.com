@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getProjects } from "@/sanity/sanity.query";
+import { getProjects } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 
 export default async function Project() {

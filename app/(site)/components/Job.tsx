@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getJob } from "@/sanity/sanity.query";
+import { getJob } from "@/lib/sanity.query";
 import type { JobType } from "@/types";
 
 export default async function Job() {
@@ -15,7 +15,7 @@ export default async function Job() {
         {job.map((data) => (
           <div
             key={data._id}
-            className="flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[4.5rem] before:left-7 before:w-[1px] before:h-[calc(100%-50px)] before:bg-zinc-800"
+            className="flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[4.5rem] before:left-7 before:w-[1px] before:h-[calc(100%-50px)] dark:before:bg-zinc-800 before:bg-zinc-200"
           >
             <a
               href={data.url}
@@ -35,7 +35,9 @@ export default async function Job() {
               <small className="text-sm text-zinc-500 mt-2 tracking-widest uppercase">
                 {data.startDate.toString()} - {data.endDate.toString()}
               </small>
-              <p className="text-base text-zinc-400 my-4">{data.description}</p>
+              <p className="text-base dark:text-zinc-400 text-zinc-600 my-4">
+                {data.description}
+              </p>
             </div>
           </div>
         ))}

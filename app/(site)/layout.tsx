@@ -1,19 +1,38 @@
 import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import blender from "./font/font";
 import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--inter",
+});
 
 export const metadata: Metadata = {
-  title: "Sanity Next.js Portfolio Site",
-  metadataBase: new URL("https://sanity-nextjs-site.vercel.app"),
-  description: "A personal portfolio site built with Sanity and Next.js",
+  title: "Victor Eke | Software Developer",
+  metadataBase: new URL("https://victoreke.com"),
+  description:
+    "Victor Eke is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
   openGraph: {
+    title: "Victor Eke | Software Developer",
+    url: "https://victoreke.com",
+    siteName: "Victor Eke",
+    locale: "en-US",
+    type: "website",
+    description:
+      "Victor Eke is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
     images:
-      "https://res.cloudinary.com/victoreke/image/upload/v1689893059/docs/og.png",
+      "https://res.cloudinary.com/victoreke/image/upload/v1690292066/victoreke/og.png",
   },
+  twitter: {
+    creator: "Victor Eke",
+    creatorId: "@victorekea",
+    card: "summary_large_image",
+  },
+  themeColor: "#33E092",
 };
 
 export default function RootLayout({
@@ -22,8 +41,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-zinc-900 text-white`}>
+    <html lang="en" className="dark">
+      <body
+        className={`${blender.variable} ${inter.className} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
+      >
         <Navbar />
         {children}
         <Footer />

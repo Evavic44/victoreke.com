@@ -10,11 +10,6 @@ export const dataset: string = checkValue(
   "NEXT_PUBLIC_SANITY_DATASET"
 );
 
-export const basePath = checkValue(
-  process.env.NEXT_PUBLIC_SANITY_BASE_PATH,
-  "NEXT_PUBLIC_SANITY_BASE_PATH"
-);
-
 export const accessToken = checkValue(
   process.env.NEXT_PUBLIC_SANITY_ACCESS_TOKEN,
   "NEXT_PUBLIC_SANITY_ACCESS_TOKEN"
