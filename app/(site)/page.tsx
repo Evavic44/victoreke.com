@@ -29,6 +29,7 @@ export default async function Home() {
                   <a
                     href={data.socialLinks.github}
                     rel="noreferer noopener"
+                    target="_blank"
                     className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
                   >
                     <BiLogoGithub /> GitHub
@@ -38,6 +39,7 @@ export default async function Home() {
                   <a
                     href={data.socialLinks.linkedin}
                     rel="noreferer noopener"
+                    target="_blank"
                     className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
                   >
                     <BiLogoLinkedinSquare />
@@ -48,6 +50,7 @@ export default async function Home() {
                   <a
                     href={data.socialLinks.twitter}
                     rel="noreferer noopener"
+                    target="_blank"
                     className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
                   >
                     <BiLogoTwitter />
@@ -58,6 +61,7 @@ export default async function Home() {
                   <a
                     href={data.socialLinks.codepen}
                     rel="noreferer noopener"
+                    target="_blank"
                     className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
                   >
                     <BiLogoCodepen />
