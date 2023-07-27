@@ -18,9 +18,9 @@ const profile = {
       title: "Headline",
       type: "string",
       description: "In one short sentence, what do you do?",
-      validation: (Rule) => Rule.required().min(40).max(50),
+      validation: (Rule) => Rule.required().min(40).max(60),
     }),
-    {
+    defineField({
       name: "profileImage",
       title: "Profile Image",
       type: "image",
@@ -33,35 +33,41 @@ const profile = {
           type: "string",
         },
       ],
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "shortBio",
       title: "Short Bio",
       type: "text",
       rows: 4,
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "email",
       title: "Email Address",
       type: "string",
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "location",
       title: "Location",
       type: "string",
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "fullBio",
       title: "Full Bio",
       type: "array",
       of: [{ type: "block" }],
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "resumeURL",
       title: "Upload Resume",
       type: "file",
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "socialLinks",
       title: "Social Links",
       type: "object",
@@ -86,10 +92,10 @@ const profile = {
           initialValue: "https://twitter.com/",
         },
         {
-          name: "twitch",
-          title: "Twitch URL",
+          name: "codepen",
+          title: "Codepen URL",
           type: "url",
-          initialValue: "https://twitch.com/",
+          initialValue: "https://codepen.io/",
         },
       ],
       options: {
@@ -97,14 +103,16 @@ const profile = {
         collapsible: true,
         columns: 2,
       },
-    },
-    {
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: "skills",
       title: "Skills",
       type: "array",
       description: "Add a list of skills",
       of: [{ type: "string" }],
-    },
+      validation: (rule) => rule.required(),
+    }),
   ],
 };
 
