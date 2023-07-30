@@ -54,13 +54,33 @@ const project = {
         },
       ],
     },
-    {
+    defineField({
       name: "description",
       title: "Description",
       type: "array",
       description: "Write a full description about this project",
-      of: [{ type: "block" }],
-    },
+      of: [
+        { type: "block" },
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "caption",
+              title: "Image caption",
+              type: "string",
+              description: "Text displayed below the image.",
+            },
+            {
+              name: "alt",
+              title: "Alt text",
+              type: "string",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+        },
+      ],
+    }),
   ],
 };
 

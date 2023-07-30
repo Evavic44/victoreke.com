@@ -6,6 +6,6 @@ const imageBuilder = imageUrlBuilder({
   dataset: dataset || "",
 });
 
-export const urlFor = (source: string) => {
-  return imageBuilder.image(source);
-};
+export function urlFor(source: any) {
+  return imageBuilder.image(source).auto("format").fit("max");
+}

@@ -4,6 +4,7 @@ import { getSingleProject } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import fallBackImage from "@/public/project.png";
+import { PortableTextComponent } from "@/app/(site)/components/PortableText";
 
 type Props = {
   params: {
@@ -63,7 +64,10 @@ export default async function Project({ params }: Props) {
         />
 
         <div className="flex flex-col gap-y-6 mt-8 leading-7 text-zinc-400">
-          <PortableText value={project.description} />
+          <PortableText
+            value={project.description}
+            components={PortableTextComponent}
+          />
         </div>
       </div>
     </main>
