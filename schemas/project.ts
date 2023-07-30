@@ -20,15 +20,14 @@ const project = {
       type: "string",
       validation: (rule) => rule.max(60).required(),
     }),
-    defineField({
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
       description:
         "Add a custom slug for the URL or generate one from the name",
       options: { source: "name" },
-      validation: (rule) => rule.required(),
-    }),
+    },
     {
       name: "logo",
       title: "Project Logo",
@@ -38,6 +37,8 @@ const project = {
       name: "projectUrl",
       title: "Project URL",
       type: "url",
+      description:
+        "Leaving this URL blank will add a coming soon to the button.",
     },
     {
       name: "coverImage",

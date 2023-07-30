@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../../public/logo.png";
-import Theme from "../../utils/Theme";
+import Theme from "../../utils/theme";
 
 export default function Navbar() {
   return (
-    <header className="py-6 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-100 z-30 md:mb-28 mb-20">
+    <header className="font-blender tracking-tight font-semibold text-lg py-6 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-100 z-30 md:mb-28 mb-20">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         <Link href="/">
           <Image src={Logo} width={26} height={26} alt="logo" />

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import SunIcon from "../icons/SunIcon";
 import MoonIcon from "../icons/MoonIcon";
 
-export default function Theme() {
+export default function theme() {
   const [theme, setTheme] = useState<String>("dark");
   const isLight: boolean = theme === "light";
 

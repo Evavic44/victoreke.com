@@ -37,16 +37,19 @@ export default async function Project({ params }: Props) {
     <main className="max-w-6xl mx-auto lg:px-16 px-8">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-start justify-between mb-4">
-          <h1 className="font-bold lg:text-5xl text-3xl lg:leading-tight mb-4">
+          <h1 className="font-bold lg:text-5xl text-3xl lg:leading-tight mb-4 max-w-sm">
             {project.name}
           </h1>
 
           <a
             href={project.projectUrl}
             rel="noreferrer noopener"
-            className="bg-[#1d1d20] text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2"
+            target="_blank"
+            className={`bg-[#1d1d20] text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2 ${
+              !project.projectUrl ? "cursor-not-allowed" : "cursor-pointer"
+            }`}
           >
-            Explore
+            {project.projectUrl ? "Explore" : "Coming Soon"}
           </a>
         </div>
 
@@ -56,6 +59,7 @@ export default async function Project({ params }: Props) {
           height={460}
           src={project.coverImage?.image || fallBackImage}
           alt={project.coverImage?.alt || project.name}
+          quality={100}
         />
 
         <div className="flex flex-col gap-y-6 mt-8 leading-7 text-zinc-400">
