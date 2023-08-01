@@ -3,14 +3,16 @@ import { Metadata } from "next";
 import { getSingleProject } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
-import fallBackImage from "@/public/project.png";
-import { PortableTextComponent } from "@/app/(site)/components/PortableText";
+import { CustomPortableTextComponent } from "@/app/(site)/components/shared/PortableText";
 
 type Props = {
   params: {
     project: string;
   };
 };
+
+const fallbackImage: string =
+  "https://res.cloudinary.com/victoreke/image/upload/v1690824172/victoreke/og-project.png";
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -21,9 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${project.name} | Project`,
     description: project.tagline,
     openGraph: {
-      images:
-        project.coverImage?.image ||
-        "https://res.cloudinary.com/victoreke/image/upload/v1689892912/docs/project.png",
+      images: project.coverImage?.image || fallbackImage,
       title: project.name,
       description: project.tagline,
     },
@@ -55,18 +55,18 @@ export default async function Project({ params }: Props) {
         </div>
 
         <Image
-          className="rounded-xl border border-zinc-800"
+          className="rounded-xl border dark:border-zinc-800 border-zinc-100"
           width={900}
           height={460}
-          src={project.coverImage?.image || fallBackImage}
+          src={project.coverImage?.image || fallbackImage}
           alt={project.coverImage?.alt || project.name}
           quality={100}
         />
 
-        <div className="flex flex-col gap-y-6 mt-8 leading-7 text-zinc-400">
+        <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed">
           <PortableText
             value={project.description}
-            components={PortableTextComponent}
+            components={CustomPortableTextComponent}
           />
         </div>
       </div>

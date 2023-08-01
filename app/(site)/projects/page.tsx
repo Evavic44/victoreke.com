@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getProjects } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
-import EmptyState from "../components/EmptyState";
+import EmptyState from "../components/shared/EmptyState";
 
 export const metadata: Metadata = {
   title: "Project | Victor Eke",
@@ -55,7 +55,7 @@ export default async function Project() {
               />
               <div>
                 <h2 className="font-semibold mb-1">{project.name}</h2>
-                <div className="text-sm text-zinc-400">
+                <div className="text-sm dark:text-zinc-400 text-zinc-600">
                   {project.slug ? project.tagline : "Coming Soon"}
                 </div>
               </div>
