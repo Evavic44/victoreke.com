@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getJob } from "@/lib/sanity.query";
 import type { JobType } from "@/types";
+import { formatDate } from "../../utils/date";
 
 export default async function Job() {
   const job: JobType[] = await getJob();
@@ -35,7 +36,7 @@ export default async function Job() {
               <h3 className="text-xl font-black font-blender">{data.name}</h3>
               <p>{data.jobTitle}</p>
               <small className="text-sm text-zinc-500 mt-2 tracking-widest uppercase">
-                {data.startDate.toString()} - {data.endDate.toString()}
+                {formatDate(data.startDate)} - {formatDate(data.endDate)}
               </small>
               <p className="tracking-tight dark:text-zinc-400 text-zinc-600 my-4">
                 {data.description}

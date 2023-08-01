@@ -28,6 +28,8 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@portabletext/react": "^3.0.4"
+    "@portabletext/react": "^3.0.4",
+    "@sanity/code-input": "^4.1.1",
+    "next-sanity-image": "^6.1.0"
   }
 }
