@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import SunIcon from "../icons/SunIcon";
-import MoonIcon from "../icons/MoonIcon";
+import SunIcon from "../../icons/SunIcon";
+import MoonIcon from "../../icons/MoonIcon";
 
 export default function Theme() {
   const [theme, setTheme] = useState<String>("dark");

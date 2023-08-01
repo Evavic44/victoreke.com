@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../../public/logo.png";
-import Theme from "@/app/(site)/utils/theme";
+import Theme from "./theme";
 
 export default function Navbar() {
   return (
