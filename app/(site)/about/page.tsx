@@ -5,6 +5,7 @@ import type { ProfileType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiFile } from "react-icons/bi";
 import { urlFor } from "@/lib/sanity.image";
+import { CustomPortableTextComponent } from "../components/shared/PortableText";
 
 export const metadata: Metadata = {
   title: "About | Victor Eke",
@@ -27,20 +28,23 @@ export default async function About() {
       {profile &&
         profile.map((data) => (
           <div key={data._id}>
-            <section className="grid lg:grid-cols-2 grid-cols-1 gap-x-6 justify-items-center">
+            <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-6 justify-items-center">
               <div className="order-2 lg:order-none">
                 <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 mb-8 font-black font-blender tracking-tight">
                   I&apos;m {data.fullName}. I live in {data.location}, where I
                   build the future.
                 </h1>
 
-                <div className="flex flex-col gap-y-3 dark:text-zinc-400 text-zinc-600 leading-relaxed">
-                  <PortableText value={data.fullBio} />
+                <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed">
+                  <PortableText
+                    value={data.fullBio}
+                    components={CustomPortableTextComponent}
+                  />
                 </div>
               </div>
 
-              <div className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-none mb-12">
-                <div>
+              <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-none mb-12">
+                <div className="sticky top-10">
                   <Image
                     className="rounded-2xl mb-4 object-cover max-h-96 min-h-96 bg-top"
                     src={data.profileImage.image}
@@ -50,33 +54,33 @@ export default async function About() {
                     alt={data.profileImage.alt}
                     placeholder="blur"
                     blurDataURL={urlFor(data.profileImage.image)
-                      .width(100)
-                      .height(100)
+                      .width(200)
+                      .height(200)
                       .blur(50)
-                      .fit("max")
                       .url()}
                   />
 
-                  <a
-                    href={`${data.resumeURL}?dl=${data.fullName}_resume`}
-                    className="flex items-center justify-center gap-x-2 dark:bg-[#1d1d20] bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-center cursor-cell font-black font-blender"
-                  >
-                    <BiFile className="text-base" /> Download Resumé
-                  </a>
+                  <ul className="flex flex-col gap-y-4">
+                    <li>
+                      <a
+                        href={`${data.resumeURL}?dl=${data.fullName}_resume`}
+                        className="flex items-center justify-center gap-x-2 dark:bg-[#1d1d20] bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-center cursor-cell font-black font-blender"
+                      >
+                        <BiFile className="text-base" /> Download Resumé
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={`mailto:${data.email}`}
+                        className="flex items-center gap-x-2 hover:text-primary-color"
+                      >
+                        <BiEnvelope className="text-lg" />
+                        {data.email}
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-
-                <ul>
-                  <li>
-                    <a
-                      href={`mailto:${data.email}`}
-                      className="flex items-center gap-x-2 hover:text-primary-color"
-                    >
-                      <BiEnvelope className="text-lg" />
-                      {data.email}
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              </aside>
             </section>
 
             <section className="mt-24 max-w-2xl">

@@ -6,7 +6,7 @@ import PortableImage from "./PortableImage";
 export const CustomPortableTextComponent: PortableTextComponents = {
   types: { image: PortableImage },
   block: {
-    normal: ({ children }) => <p className="mt-2 mb-8">{children}</p>,
+    normal: ({ children }) => <p className="mt-2 mb-6">{children}</p>,
     h1: ({ children }) => (
       <h1 className="before:content-['#'] before:hidden hover:before:inline before:absolute before:-left-6 before:text-3xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-bold tracking-tight text-5xl dark:text-zinc-100 text-zinc-700 mb-2 mt-6">
         <Link
@@ -26,7 +26,7 @@ export const CustomPortableTextComponent: PortableTextComponents = {
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="before:content-['#'] before:hidden hover:before:inline before:absolute before:-left-5 before:text-2xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-2xl dark:text-zinc-100 text-zinc-700 mb-2 mt-6">
+      <h3 className="before:content-['#'] before:hidden hover:before:inline before:absolute before:-left-5 before:text-2xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-2xl dark:text-zinc-100 text-zinc-700 my-2">
         <Link
           href={`#${children?.toString().toLowerCase().replaceAll(" ", "-")}`}
         >
@@ -50,7 +50,7 @@ export const CustomPortableTextComponent: PortableTextComponents = {
     link: ({ children, value }) => {
       return (
         <a
-          className="inline-flex items-center justify-start gap-x-1 dark:text-blue-400 text-blue-500 visited:dark:text-purple-400 visited:text-purple-500 hover:underline"
+          className="inline-flex items-center justify-start gap-x-1 dark:text-blue-400 text-blue-500 hover:underline"
           href={value?.href}
           rel="noreferrer noopener"
           target="_blank"
@@ -67,17 +67,14 @@ export const CustomPortableTextComponent: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="flex flex-col gap-y-5 list-[square] mt-5 ml-5">
-        {children}
-      </ul>
+      <ul className="list-[square] mt-5 ml-5">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="flex flex-col gap-y-5 list-decimal mt-5 ml-5">
-        {children}
-      </ol>
+      <ol className="list-decimal mt-5 ml-5">{children}</ol>
     ),
   },
   listItem: {
-    bullet: ({ children }) => <li className="mt-1">{children}</li>,
+    bullet: ({ children }) => <li className="mb-4">{children}</li>,
+    number: ({ children }) => <li className="mb-4">{children}</li>,
   },
 };

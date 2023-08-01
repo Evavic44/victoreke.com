@@ -25,7 +25,10 @@ const profile = {
       title: "Profile Image",
       type: "image",
       description: "Upload a profile picture",
-      options: { hotspot: true },
+      options: {
+        hotspot: true,
+        metadata: ["lqip"],
+      },
       fields: [
         {
           name: "alt",
@@ -58,7 +61,43 @@ const profile = {
       name: "fullBio",
       title: "Full Bio",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "H1", value: "h1" },
+            { title: "H2", value: "h2" },
+            { title: "H3", value: "h3" },
+            { title: "Quote", value: "blockquote" },
+          ],
+          marks: {
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Emphasis", value: "em" },
+              { title: "Code", value: "code" },
+            ],
+          },
+        },
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            {
+              name: "caption",
+              title: "Image caption",
+              type: "string",
+              description: "Text displayed below the image.",
+            },
+            {
+              name: "alt",
+              title: "Alt text",
+              type: "string",
+              description: "Important for SEO and accessiblity.",
+            },
+          ],
+        },
+      ],
       validation: (rule) => rule.required(),
     }),
     defineField({
