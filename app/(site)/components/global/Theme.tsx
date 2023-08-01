@@ -1,10 +1,9 @@
 "use client";
+import { useState } from "react";
+import SunIcon from "../../icons/SunIcon";
+import MoonIcon from "../../icons/MoonIcon";
 
-import { useState, useEffect } from "react";
-import SunIcon from "../icons/SunIcon";
-import MoonIcon from "../icons/MoonIcon";
-
-export default function theme() {
+export default function Theme() {
   const [theme, setTheme] = useState<String>("dark");
   const isLight: boolean = theme === "light";
 

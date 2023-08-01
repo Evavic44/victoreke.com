@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type faviconTypes = {
   domain: string;
   alt: string;
@@ -14,7 +16,7 @@ export default function Favicon({ domain, alt }: faviconTypes) {
   }
 
   return (
-    <img
+    <Image
       src={`https://icons.duckduckgo.com/ip3/${extractDomain(domain)}.ico`}
       width={20}
       height={20}

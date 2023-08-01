@@ -3,7 +3,7 @@ import { dataset, projectId } from "../lib/sanity.api";
 
 const imageBuilder = imageUrlBuilder({
   projectId: projectId || "",
-  dataset: dataset || "",
+  dataset: dataset || "production",
 });
 
 export function urlFor(source: any) {
