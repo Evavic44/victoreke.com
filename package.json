@@ -29,6 +29,7 @@
   "devDependencies": {
     "@portabletext/react": "^3.0.4",
     "@sanity/code-input": "^4.1.1",
+    "@vercel/analytics": "^1.0.1",
     "next-sanity-image": "^6.1.0"
   }
 }
