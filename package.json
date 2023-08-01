@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next lint && next build",
+    "start": "next start"
   },
   "dependencies": {
     "@sanity/image-url": "^1.0.2",

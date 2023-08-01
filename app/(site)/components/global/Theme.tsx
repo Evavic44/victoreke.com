@@ -1,6 +1,5 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SunIcon from "../../icons/SunIcon";
 import MoonIcon from "../../icons/MoonIcon";
 
