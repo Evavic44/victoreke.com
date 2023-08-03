@@ -27,7 +27,7 @@ const profile = {
       description: "Upload a profile picture",
       options: {
         hotspot: true,
-        metadata: ["lqip"],
+        metadata: ["lqip"], // "blurhash", "palette", etc
       },
       fields: [
         {
@@ -144,12 +144,33 @@ const profile = {
       },
       validation: (rule) => rule.required(),
     }),
+    // defineField({
+    //   name: "skills",
+    //   title: "Skills",
+    //   type: "array",
+    //   description: "Add a list of skills",
+    //   of: [{ type: "string" }],
+    //   validation: (rule) => rule.required(),
+    // }),
     defineField({
-      name: "skills",
-      title: "Skills",
+      name: "usage",
+      title: "Usage",
       type: "array",
-      description: "Add a list of skills",
-      of: [{ type: "string" }],
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "H3", value: "h3" },
+          ],
+          marks: {
+            decorators: [
+              { title: "Strong", value: "strong" },
+              { title: "Code", value: "code" },
+            ],
+          },
+        },
+      ],
       validation: (rule) => rule.required(),
     }),
   ],

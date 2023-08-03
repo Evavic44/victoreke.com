@@ -22,7 +22,7 @@ export default function EmptyState({ value, icon }: stateType) {
           icon
         )}
       </div>
-      <h3 className="font-blender font-black tracking-tight text-xl mb-3">
+      <h3 className="   font-bold tracking-tight text-xl mb-3">
         No {value} Found
       </h3>
       <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-6 text-left list-disc ml-4">
@@ -32,7 +32,7 @@ export default function EmptyState({ value, icon }: stateType) {
         href="https://freecodecamp.org/news/how-to-build-a-portfolio-site-with-sanity-and-nextjs"
         rel="noreferrer noopener"
         target="_blank"
-        className="dark:bg-zinc-800 bg-white flex items-center gap-x-3 px-4 py-2 font-blender font-black tracking-tight"
+        className="dark:bg-zinc-800 bg-white flex items-center gap-x-3 px-4 py-2    font-bold tracking-tight"
       >
         <BiLinkExternal /> Read Guide
       </a>

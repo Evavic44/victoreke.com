@@ -8,7 +8,7 @@ export const CustomPortableTextComponent: PortableTextComponents = {
   block: {
     normal: ({ children }) => <p className="mt-2 mb-6">{children}</p>,
     h1: ({ children }) => (
-      <h1 className="before:content-['#'] before:hidden hover:before:inline before:absolute before:-left-6 before:text-3xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-bold tracking-tight text-5xl dark:text-zinc-100 text-zinc-700 mb-2 mt-6">
+      <h1 className="before:content-['#'] before:hidden hover:before:inline before:absolute before:-left-6 before:text-3xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-black tracking-tight text-5xl dark:text-zinc-100 text-zinc-700 mb-2 mt-6">
         <Link
           href={`#${children?.toString().toLowerCase().replaceAll(" ", "-")}`}
         >
@@ -36,7 +36,10 @@ export const CustomPortableTextComponent: PortableTextComponents = {
     ),
     blockquote: ({ children }) => (
       <blockquote className="relative overflow-clip font-blender font-medium tracking-tight text-2xl my-8 lg:py-6 lg:pl-6 pr-12 p-4 border dark:border-zinc-800 border-zinc-100 rounded-md">
-        <BiSolidQuoteRight className="text-7xl absolute -top-7 -right-5 -rotate-12 dark:text-zinc-800 text-zinc-200" />
+        <BiSolidQuoteRight
+          className="text-7xl absolute -top-7 -right-5 -rotate-12 dark:text-zinc-800 text-zinc-200"
+          aria-hidden="true"
+        />
         {children}
       </blockquote>
     ),
@@ -47,6 +50,11 @@ export const CustomPortableTextComponent: PortableTextComponents = {
         {children}
       </em>
     ),
+    strong: ({ children }) => (
+      <strong className="font-bold dark:text-zinc-300 text-zinc-700">
+        {children}
+      </strong>
+    ),
     link: ({ children, value }) => {
       return (
         <a
@@ -55,7 +63,7 @@ export const CustomPortableTextComponent: PortableTextComponents = {
           rel="noreferrer noopener"
           target="_blank"
         >
-          {children} <BiLinkExternal className="inline mr-1" />
+          {children} <BiLinkExternal className="inline" aria-hidden="true" />
         </a>
       );
     },

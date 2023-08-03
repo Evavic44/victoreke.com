@@ -22,7 +22,7 @@ export default async function Project() {
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <section className="max-w-2xl mb-16">
-        <h1 className="text-3xl font-blender font-black tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight">
+        <h1 className="text-3xl sm:text-5xl mb-6 lg:leading-[3.7rem]">
           Featured projects
         </h1>
         <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">

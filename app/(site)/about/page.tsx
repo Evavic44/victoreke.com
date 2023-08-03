@@ -6,6 +6,8 @@ import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiFile } from "react-icons/bi";
 import { urlFor } from "@/lib/sanity.image";
 import { CustomPortableTextComponent } from "../components/shared/PortableText";
+import Heroes from "../components/pages/Heroes";
+import Usage from "../components/pages/Usage";
 
 export const metadata: Metadata = {
   title: "About | Victor Eke",
@@ -30,7 +32,7 @@ export default async function About() {
           <div key={data._id}>
             <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-6 justify-items-center">
               <div className="order-2 lg:order-none">
-                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 mb-8 font-black font-blender tracking-tight">
+                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 mb-8">
                   I&apos;m {data.fullName}. I live in {data.location}, where I
                   build the future.
                 </h1>
@@ -53,11 +55,7 @@ export default async function About() {
                     quality={100}
                     alt={data.profileImage.alt}
                     placeholder="blur"
-                    blurDataURL={urlFor(data.profileImage.image)
-                      .width(200)
-                      .height(200)
-                      .blur(50)
-                      .url()}
+                    blurDataURL={data.profileImage.lqip}
                   />
 
                   <ul className="flex flex-col gap-y-4">
@@ -66,7 +64,7 @@ export default async function About() {
                         href={`${data.resumeURL}?dl=${data.fullName}_resume`}
                         className="flex items-center justify-center gap-x-2 dark:bg-[#1d1d20] bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-center cursor-cell font-black font-blender"
                       >
-                        <BiFile className="text-base" /> Download Resumé
+                        <BiFile className="text-base" /> Download Résumé
                       </a>
                     </li>
                     <li>
@@ -82,27 +80,8 @@ export default async function About() {
                 </div>
               </aside>
             </section>
-
-            <section className="mt-24 max-w-2xl">
-              <h2 className="text-4xl mb-4 font-black font-blender tracking-tight">
-                Expertise
-              </h2>
-              <p className="dark:text-zinc-400 text-zinc-600 max-w-lg">
-                I&apos;ve spent over 3 years working on some of my skills. In no
-                particular order, they include:
-              </p>
-
-              <ul className="flex flex-wrap items-center gap-3 mt-8 font-blender font-medium text-xl tracking-tight">
-                {data.skills.map((skill, id) => (
-                  <li
-                    key={id}
-                    className="dark:bg-[#1d1d20] bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md px-2 py-1"
-                  >
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </section>
+            <Usage />
+            <Heroes />
           </div>
         ))}
     </main>

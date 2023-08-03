@@ -8,8 +8,9 @@ export async function getProfile() {
       fullName,
       headline,
       profileImage {
-        alt, 
-        "image": asset->url
+        "image": asset->url,
+        "lqip": asset->metadata.lqip,
+        alt,
       },
       shortBio,
       location,
@@ -17,7 +18,7 @@ export async function getProfile() {
       email,
       "resumeURL": resumeURL.asset->url,
       socialLinks,
-      skills
+      usage
     }`
   );
 }
