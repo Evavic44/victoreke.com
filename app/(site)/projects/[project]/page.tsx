@@ -54,14 +54,17 @@ export default async function Project({ params }: Props) {
           </a>
         </div>
 
-        <Image
-          className="rounded-xl border dark:border-zinc-800 border-zinc-100"
-          width={900}
-          height={460}
-          src={project.coverImage?.image || fallbackImage}
-          alt={project.coverImage?.alt || project.name}
-          quality={100}
-        />
+        <div className="relative w-full h-40 pt-[52.5%]">
+          <Image
+            className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
+            layout="fill"
+            src={project.coverImage?.image || fallbackImage}
+            alt={project.coverImage?.alt || project.name}
+            quality={100}
+            placeholder="blur"
+            blurDataURL={project.coverImage?.lqip}
+          />
+        </div>
 
         <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed">
           <PortableText

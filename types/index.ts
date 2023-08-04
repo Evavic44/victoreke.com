@@ -44,8 +44,9 @@ export type ProjectType = {
   projectUrl: string;
   logo: string;
   coverImage: {
-    alt: string | null;
     image: string;
+    alt: string | null;
+    lqip: string;
   };
   description: PortableTextBlock[];
 };

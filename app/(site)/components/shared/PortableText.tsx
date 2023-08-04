@@ -68,7 +68,7 @@ export const CustomPortableTextComponent: PortableTextComponents = {
       );
     },
     code: ({ children }) => (
-      <code className="font-blender font-semibold text-[1.26rem] py-[0.15rem] px-1 rounded-sm dark:bg-zinc-800 bg-zinc-200 dark:text-zinc-200 text-zinc-600">
+      <code className="font-mono py-[0.15rem] px-1 rounded-sm dark:bg-zinc-800 bg-pink-50 text-pink-500">
         {children}
       </code>
     ),

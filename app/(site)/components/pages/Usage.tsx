@@ -15,8 +15,9 @@ export default async function Usage() {
           create a list of my stack and items I own.
         </p>
       </div>
-      {profile.map((textBlock) => (
+      {profile.map((textBlock, id) => (
         <PortableText
+          key={id}
           value={textBlock.usage}
           components={CustomPortableTextComponent}
         />

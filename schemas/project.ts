@@ -45,7 +45,10 @@ const project = {
       title: "Cover Image",
       type: "image",
       description: "Upload a cover image for this project",
-      options: { hotspot: true },
+      options: {
+        hotspot: true,
+        metadata: ["lqip"],
+      },
       fields: [
         {
           name: "alt",

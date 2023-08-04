@@ -56,7 +56,11 @@ export async function getSingleProject(slug: string) {
       _id,
       name,
       projectUrl,
-      coverImage { alt, "image": asset->url },
+      coverImage {
+        "image": asset->url,
+        "lqip": asset->metadata.lqip,
+        alt,
+      },
       tagline,
       description
     }`,

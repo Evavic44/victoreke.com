@@ -16,8 +16,8 @@ export default function Heroes() {
       <h2 className="text-4xl mb-4 font-bold tracking-tight">Heroes</h2>
       <p className="dark:text-zinc-400 text-zinc-600 max-w-xl">
         I&apos;ve been fortunate enough to meet some of my heroes, but I still
-        have a long way to go. This is a list of some of the people I'd like to
-        high five IRL.
+        have a long way to go. This is a list of some of the people I&apos;d
+        like to high five IRL.
       </p>
 
       <ul className="flex flex-wrap items-center gap-3 mt-8 font-medium tracking-tight">
