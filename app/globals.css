@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  font-family: var(--blender);
+  font-weight: 900;
+  letter-spacing: -1px;
+}

@@ -9,7 +9,7 @@ export default async function Job() {
   return (
     <section className="mt-32">
       <div className="mb-16">
-        <h2 className="text-4xl mb-4 font-black font-blender tracking-tight">
+        <h2 className="text-4xl mb-4  font-bold   tracking-tight">
           Work Experience
         </h2>
       </div>
@@ -33,7 +33,7 @@ export default async function Job() {
               />
             </a>
             <div className="flex flex-col items-start">
-              <h3 className="text-xl font-black font-blender">{data.name}</h3>
+              <h3 className="text-xl  font-bold  ">{data.name}</h3>
               <p>{data.jobTitle}</p>
               <small className="text-sm text-zinc-500 mt-2 tracking-widest uppercase">
                 {formatDate(data.startDate)} - {formatDate(data.endDate)}

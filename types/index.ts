@@ -5,8 +5,9 @@ export type ProfileType = {
   fullName: string;
   headline: string;
   profileImage: {
-    alt: string;
     image: string;
+    lqip: string;
+    alt: string;
   };
   shortBio: string;
   email: string;
@@ -20,7 +21,8 @@ export type ProfileType = {
     linkedin: string;
     twitter: string;
   };
-  skills: string[];
+  usage: PortableTextBlock[];
+  // skills: string[];
 };
 
 export type JobType = {
@@ -42,8 +44,9 @@ export type ProjectType = {
   projectUrl: string;
   logo: string;
   coverImage: {
-    alt: string | null;
     image: string;
+    alt: string | null;
+    lqip: string;
   };
   description: PortableTextBlock[];
 };

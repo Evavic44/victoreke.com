@@ -18,13 +18,13 @@ export default async function Home() {
         {profile &&
           profile.map((data) => (
             <div key={data._id} className="lg:max-w-2xl max-w-2xl">
-              <h1 className="font-blender text-3xl font-black tracking-tight sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
+              <h1 className="text-3xl sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
                 {data.headline}
               </h1>
               <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
                 {data.shortBio}
               </p>
-              <ul className="flex items-center flex-wrap gap-x-6 gap-y-4 my-10 font-black font-blender text-lg">
+              <ul className="flex items-center flex-wrap gap-x-6 gap-y-4 my-10">
                 <li>
                   <a
                     href={data.socialLinks.github}

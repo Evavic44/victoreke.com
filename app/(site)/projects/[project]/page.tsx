@@ -38,7 +38,7 @@ export default async function Project({ params }: Props) {
     <main className="max-w-6xl mx-auto lg:px-16 px-8">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-start justify-between mb-4">
-          <h1 className="font-bold lg:text-5xl text-3xl lg:leading-tight mb-4 max-w-sm">
+          <h1 className="lg:text-5xl text-3xl lg:leading-tight mb-4 max-w-sm">
             {project.name}
           </h1>
 
@@ -54,14 +54,17 @@ export default async function Project({ params }: Props) {
           </a>
         </div>
 
-        <Image
-          className="rounded-xl border dark:border-zinc-800 border-zinc-100"
-          width={900}
-          height={460}
-          src={project.coverImage?.image || fallbackImage}
-          alt={project.coverImage?.alt || project.name}
-          quality={100}
-        />
+        <div className="relative w-full h-40 pt-[52.5%]">
+          <Image
+            className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
+            layout="fill"
+            src={project.coverImage?.image || fallbackImage}
+            alt={project.coverImage?.alt || project.name}
+            quality={100}
+            placeholder="blur"
+            blurDataURL={project.coverImage?.lqip}
+          />
+        </div>
 
         <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed">
           <PortableText

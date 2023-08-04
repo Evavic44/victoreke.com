@@ -1,26 +1,31 @@
 import Image from "next/image";
 
-type faviconTypes = {
+type faviconType = {
   domain: string;
   alt: string;
 };
 
-export default function Favicon({ domain, alt }: faviconTypes) {
-  // const duckduckgo = `https://icons.duckduckgo.com/ip3/sanity.io.ico`;
-
-  function extractDomain(url: string): string | null {
+export default function Favicon({ domain }: faviconType) {
+  function extractDomain(url: string) {
     const match = url.match(
-      /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/\n]+)/i
+      /^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:/.\n]+\.[a-z]{2,})(?:\/|$)/i
     );
-    return match ? match[1] : null;
+    if (match) {
+      const fullDomain = match[1];
+      const parts = fullDomain.split(".");
+      if (parts.length >= 2) {
+        return parts[0];
+      }
+    }
   }
 
   return (
     <Image
-      src={`https://icons.duckduckgo.com/ip3/${extractDomain(domain)}.ico`}
-      width={20}
-      height={20}
-      alt={alt}
+      className="mr-2"
+      src={`http://www.google.com/s2/favicons?domain=${domain}`}
+      width={17}
+      height={17}
+      alt={extractDomain(domain) || ""}
     />
   );
 }

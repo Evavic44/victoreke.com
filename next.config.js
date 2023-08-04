@@ -9,13 +9,9 @@ module.exports = {
         hostname: "cdn.sanity.io",
         port: "",
       },
-      {
-        protocol: "https",
-        hostname: "icons.duckduckgo.com",
-      },
-      {
-        hostname: "res.cloudinary.com",
-      },
+      { hostname: "icons.duckduckgo.com" },
+      { hostname: "res.cloudinary.com" },
+      { hostname: "www.google.com" },
     ],
   },
 };
