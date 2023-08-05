@@ -38,13 +38,9 @@ export default async function Project() {
         <section className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-12">
           {projects.map((project) => (
             <Link
-              href={project.slug ? `/projects/${project.slug}` : ""}
+              href={`/projects/${project.slug}`}
               key={project._id}
-              className={`flex items-center gap-x-4 dark:bg-[#1d1d20] bg-zinc-50 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 p-4 rounded-lg ${
-                !project.slug
-                  ? "cursor-not-allowed opacity-80"
-                  : "cursor-pointer"
-              }`}
+              className="flex items-center gap-x-4 dark:bg-primary-bg bg-zinc-50 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 p-4 rounded-lg"
             >
               <Image
                 src={project.logo}
@@ -56,7 +52,7 @@ export default async function Project() {
               <div>
                 <h2 className="font-semibold mb-1">{project.name}</h2>
                 <div className="text-sm dark:text-zinc-400 text-zinc-600">
-                  {project.slug ? project.tagline : "Coming Soon"}
+                  {project.tagline}
                 </div>
               </div>
             </Link>

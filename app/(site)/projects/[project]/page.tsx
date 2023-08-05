@@ -46,8 +46,10 @@ export default async function Project({ params }: Props) {
             href={project.projectUrl}
             rel="noreferrer noopener"
             target="_blank"
-            className={`bg-[#1d1d20] text-white hover:border-zinc-700 border border-transparent rounded-md px-4 py-2 ${
-              !project.projectUrl ? "cursor-not-allowed" : "cursor-pointer"
+            className={`dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-4 py-2 ${
+              !project.projectUrl
+                ? "cursor-not-allowed opacity-80"
+                : "cursor-pointer hover:border-zinc-700"
             }`}
           >
             {project.projectUrl ? "Explore" : "Coming Soon"}
@@ -61,8 +63,8 @@ export default async function Project({ params }: Props) {
             src={project.coverImage?.image || fallbackImage}
             alt={project.coverImage?.alt || project.name}
             quality={100}
-            placeholder="blur"
-            blurDataURL={project.coverImage?.lqip}
+            placeholder={project.coverImage?.lqip ? `blur` : "empty"}
+            blurDataURL={project.coverImage?.lqip || ""}
           />
         </div>
 

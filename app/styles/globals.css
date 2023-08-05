@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "prism.css";
+
 h1 {
   font-family: var(--blender);
   font-weight: 900;

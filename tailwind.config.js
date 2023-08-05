@@ -15,6 +15,8 @@ module.exports = {
       colors: {
         "primary-color": "#33E092",
         "secondary-color": "#0CCE6B",
+        "primary-bg": "#1d1d20",
+        "secondary-bg": "#f4f4f4",
       },
       boxShadow: {
         "line-light": "rgba(17, 17, 26, 0.1) 0px 1px 0px",
