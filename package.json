@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sanity/code-input": "^4.1.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.14.3",
     "@types/node": "20.4.4",
@@ -28,8 +29,9 @@
   },
   "devDependencies": {
     "@portabletext/react": "^3.0.4",
-    "@sanity/code-input": "^4.1.1",
+    "@types/refractor": "^3.0.2",
     "@vercel/analytics": "^1.0.1",
-    "next-sanity-image": "^6.1.0"
+    "next-sanity-image": "^6.1.0",
+    "react-refractor": "^2.1.7"
   }
 }

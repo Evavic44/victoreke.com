@@ -24,7 +24,7 @@ export default function Heroes() {
         {heroes.map((heroe, id) => (
           <li
             key={id}
-            className="dark:bg-[#1d1d20] bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md px-2 py-1"
+            className="dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md px-2 py-1"
           >
             {heroe}
           </li>

@@ -62,7 +62,7 @@ export default async function About() {
                     <li>
                       <a
                         href={`${data.resumeURL}?dl=${data.fullName}_resume`}
-                        className="flex items-center justify-center gap-x-2 dark:bg-[#1d1d20] bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-center cursor-cell font-black font-blender"
+                        className="flex items-center justify-center gap-x-2 dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-2 text-center cursor-cell font-black font-blender"
                       >
                         <BiFile className="text-base" /> Download Résumé
                       </a>

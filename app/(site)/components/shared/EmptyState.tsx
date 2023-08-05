@@ -9,7 +9,7 @@ type stateType = {
 
 export default function EmptyState({ value, icon }: stateType) {
   return (
-    <div className="w-full flex flex-col items-center text-center dark:bg-[#1d1d20] bg-zinc-100 border border-dashed dark:border-zinc-700 border-zinc-100 rounded-md px-6 py-8">
+    <div className="w-full flex flex-col items-center text-center dark:bg-primary-bg bg-zinc-100 border border-dashed dark:border-zinc-700 border-zinc-100 rounded-md px-6 py-8">
       <div className="mb-6 text-4xl text-zinc-500">
         {!icon ? (
           <Image
