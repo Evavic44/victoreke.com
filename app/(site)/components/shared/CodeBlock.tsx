@@ -39,7 +39,7 @@ type codeTypes = {
 
 export default function CodeBlock({ value }: codeTypes) {
   return (
-    <div>
+    <div className="my-6">
       <div className="flex items-center justify-between bg-zinc-50 dark:bg-[#141414] border dark:border-zinc-800 border-zinc-200 rounded-t-lg px-4 py-3 translate-y-2">
         <p className="text-sm">{value.filename}</p>
         <button>
