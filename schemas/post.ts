@@ -1,50 +1,63 @@
-import { BiPackage } from "react-icons/bi";
-import { defineField } from "sanity";
+import { defineField, defineType } from "sanity";
+import { BiBookOpen } from "react-icons/bi";
+import Author from "./author";
 
-const project = {
-  name: "project",
-  title: "Projects",
-  description: "Project Schema",
+export default defineType({
+  name: "Post",
+  title: "Blog Posts",
   type: "document",
-  icon: BiPackage,
+  icon: BiBookOpen,
   fields: [
-    {
-      name: "name",
-      title: "Name",
-      type: "string",
-      description: "Enter the name of the project",
-    },
     defineField({
-      name: "tagline",
-      title: "Tagline",
+      name: "title",
+      title: "Title",
       type: "string",
-      validation: (rule) => rule.max(60).required(),
+      description: "Give your blog post a nice title.",
+      validation: (Rule) =>
+        Rule.required().min(50).max(70).warning("Recommend 50 - 70 characters"),
     }),
-    {
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",
-      description:
-        "Add a custom slug for the URL or generate one from the name",
-      options: { source: "name" },
-    },
-    {
-      name: "logo",
-      title: "Project Logo",
-      type: "image",
-    },
-    {
-      name: "projectUrl",
-      title: "Project URL",
+      description: "Add a slug to your post or generate it from the title",
+      options: { source: "title" },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      description: "Summarize your article in 150 - 160 characters.",
+      rows: 4,
+      validation: (Rule) => [
+        Rule.required()
+          .min(150)
+          .error("A description of min 150 characters is required"),
+        Rule.max(170).warning(
+          "Please keep your description below 160 characters"
+        ),
+      ],
+    }),
+    defineField({
+      name: "canonicalLink",
+      title: "Canonical Link",
       type: "url",
       description:
-        "Leaving this URL blank will add a coming soon to the button.",
-    },
-    {
+        "If this post has been shared somewhere else, add a canonical url that links to it.",
+    }),
+    defineField({
+      name: "date",
+      title: "Date",
+      type: "datetime",
+      initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
       name: "coverImage",
       title: "Cover Image",
       type: "image",
-      description: "Upload a cover image for this project",
+      description:
+        "Upload a cover image for this blog post. Recommended size 1200 x 750",
       options: {
         hotspot: true,
         metadata: ["lqip"],
@@ -56,12 +69,26 @@ const project = {
           type: "string",
         },
       ],
-    },
+    }),
     defineField({
-      name: "description",
-      title: "Description",
+      name: "tags",
+      title: "Post Tags",
       type: "array",
-      description: "Write a full description about this project",
+      description: "Add relevant tags that match with your post",
+      of: [{ type: "string" }],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "author",
+      title: "Author",
+      type: "reference",
+      to: [{ type: Author.name }],
+    }),
+    defineField({
+      name: "body",
+      title: "Post Body",
+      type: "array",
+      description: "Write your post content here",
       of: [
         {
           type: "block",
@@ -128,6 +155,4 @@ const project = {
       ],
     }),
   ],
-};
-
-export default project;
+});

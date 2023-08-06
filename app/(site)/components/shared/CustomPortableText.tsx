@@ -4,7 +4,7 @@ import { BiLinkExternal, BiSolidQuoteRight } from "react-icons/bi";
 import PortableImage from "./PortableImage";
 import CodeBlock from "./CodeBlock";
 
-export const CustomPortableTextComponent: PortableTextComponents = {
+export const CustomPortableText: PortableTextComponents = {
   types: {
     image: PortableImage,
     code: CodeBlock,

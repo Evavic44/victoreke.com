@@ -4,8 +4,7 @@ import { getProfile } from "@/lib/sanity.query";
 import type { ProfileType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { BiEnvelope, BiFile } from "react-icons/bi";
-import { urlFor } from "@/lib/sanity.image";
-import { CustomPortableTextComponent } from "../components/shared/PortableText";
+import { CustomPortableText } from "../components/shared/CustomPortableText";
 import Heroes from "../components/pages/Heroes";
 import Usage from "../components/pages/Usage";
 
@@ -40,7 +39,7 @@ export default async function About() {
                 <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed">
                   <PortableText
                     value={data.fullBio}
-                    components={CustomPortableTextComponent}
+                    components={CustomPortableText}
                   />
                 </div>
               </div>

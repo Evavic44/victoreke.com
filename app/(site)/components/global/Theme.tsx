@@ -21,6 +21,7 @@ export default function Theme() {
   }
 
   // CSS
+  // css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/#aa-using-a-body-class
   // // Select the button
   // const btn = document.querySelector(".btn-toggle");
   // // Check for dark mode preference at the OS level
@@ -59,7 +60,7 @@ export default function Theme() {
   //   localStorage.setItem("theme", theme);
   // });
 
-  return (
+  https: return (
     <div>
       <button
         onClick={toggleTheme}
