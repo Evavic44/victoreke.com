@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import { getProfile } from "@/lib/sanity.query";
 import type { ProfileType } from "@/types";
-import { CustomPortableTextComponent } from "../shared/PortableTextUsage";
+import { CustomPortableTextFavicon } from "../shared/CustomPortableTextFavicon";
 
 export default async function Usage() {
   const profile: ProfileType[] = await getProfile();
@@ -19,7 +19,7 @@ export default async function Usage() {
         <PortableText
           key={id}
           value={textBlock.usage}
-          components={CustomPortableTextComponent}
+          components={CustomPortableTextFavicon}
         />
       ))}
     </section>

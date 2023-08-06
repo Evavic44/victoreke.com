@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://victoreke.com/projects"),
   description: "Explore projects built by Victor Eke",
   openGraph: {
-    title: "About | Victor Eke",
+    title: "Projects | Victor Eke",
     url: "https://victoreke.com/projects",
     description: "Explore projects built by Victor Eke",
   },

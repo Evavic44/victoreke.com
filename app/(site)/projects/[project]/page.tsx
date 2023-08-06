@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { getSingleProject } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
-import { CustomPortableTextComponent } from "@/app/(site)/components/shared/PortableText";
+import { CustomPortableText } from "@/app/(site)/components/shared/CustomPortableText";
 
 type Props = {
   params: {
@@ -21,9 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${project.name} | Project`,
+    metadataBase: new URL(`https://victoreke.com/projects/${project.slug}`),
     description: project.tagline,
     openGraph: {
       images: project.coverImage?.image || fallbackImage,
+      url: `https://victoreke.com/projects/${project.slug}`,
       title: project.name,
       description: project.tagline,
     },
@@ -71,7 +73,7 @@ export default async function Project({ params }: Props) {
         <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed">
           <PortableText
             value={project.description}
-            components={CustomPortableTextComponent}
+            components={CustomPortableText}
           />
         </div>
       </div>
