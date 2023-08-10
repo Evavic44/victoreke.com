@@ -14,7 +14,7 @@ export default async function Posts() {
       {posts.length > 0 ? (
         <div className="flex flex-col lg:max-w-[950px] max-w-full lg:gap-y-8 gap-y-12 mb-12">
           {posts.map((post) => (
-            <article>
+            <article key={post._id}>
               <Link
                 href={`/blog/${post.slug}`}
                 key={post._id}

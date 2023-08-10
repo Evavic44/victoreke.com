@@ -12,7 +12,7 @@ export default async function FeaturedPosts() {
     <div className="flex flex-col gap-y-6 lg:max-w-[950px] max-w-full mb-12">
       {featuredPosts.map((post) =>
         post.featured !== true ? null : (
-          <article>
+          <article key={post._id}>
             <Link
               href={`/blog/${post.slug}`}
               key={post._id}
