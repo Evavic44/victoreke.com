@@ -10,15 +10,13 @@ export default function EmptyState({ value, icon }: stateType) {
   return (
     <div className="w-full flex flex-col items-center text-center dark:bg-primary-bg bg-zinc-100 border border-dashed dark:border-zinc-700 border-zinc-200 rounded-md px-6 py-8">
       <div className="mb-6 text-4xl text-zinc-500">
-        {!icon ? (
+        {icon || (
           <Image
             width={80}
             height={80}
             src={duckImage}
             alt="Yellow duck searching"
           />
-        ) : (
-          icon
         )}
       </div>
       <h3 className="   font-bold tracking-tight text-xl mb-3">

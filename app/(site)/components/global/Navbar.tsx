@@ -37,14 +37,6 @@ export default function Navbar() {
                 Blog
               </Link>
             </li>
-            <li>
-              <Link
-                href="/open-source"
-                className="dark:text-white text-zinc-600 hover:text-primary-color dark:hover:text-primary-color duration-300"
-              >
-                Open Source
-              </Link>
-            </li>
           </ul>
         </nav>
 

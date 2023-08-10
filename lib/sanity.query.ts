@@ -67,3 +67,59 @@ export async function getSingleProject(slug: string) {
     { slug }
   );
 }
+
+// Reusable post fields
+const postField = groq`
+  _id,
+  _createdAt,
+  title,
+  "slug": slug.current,
+  description,
+  coverImage {
+    "image": asset->url,
+    "lqip": asset->metadata.lqip,
+    alt,
+  },
+  featured
+`;
+
+export async function getPosts() {
+  return client.fetch(
+    groq`*[_type == "Post"] | order(_createdAt asc){
+      ${postField},
+      date,
+      "author": author-> {
+        name, 
+        photo, 
+        twitterUrl
+      },
+      body,
+    }`
+  );
+}
+
+export async function getFeaturedPosts() {
+  return client.fetch(
+    groq`*[_type == "Post" && featured == true] {
+      ${postField}
+    }`
+  );
+}
+
+export async function getSinglePost() {
+  return client.fetch(
+    groq`*[_type == "Post"] | order(_createdAt asc){
+      ${postField},
+      _updatedAt,
+      canonicalLink,
+      date,
+      tags,
+      "author": author-> {
+        name, 
+        photo, 
+        twitterUrl
+      },
+      body,
+    }`
+  );
+}

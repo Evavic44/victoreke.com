@@ -12,9 +12,9 @@ export default defineType({
       name: "title",
       title: "Title",
       type: "string",
-      description: "Give your blog post a nice title.",
-      validation: (Rule) =>
-        Rule.required().min(50).max(70).warning("Recommend 50 - 70 characters"),
+      description:
+        "Give your blog post a nice title. Recommend 50 - 70 characters",
+      validation: (Rule) => Rule.required().min(30),
     }),
     defineField({
       name: "slug",
@@ -34,9 +34,6 @@ export default defineType({
         Rule.required()
           .min(150)
           .error("A description of min 150 characters is required"),
-        Rule.max(170).warning(
-          "Please keep your description below 160 characters"
-        ),
       ],
     }),
     defineField({
@@ -83,6 +80,7 @@ export default defineType({
       title: "Author",
       type: "reference",
       to: [{ type: Author.name }],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "body",
@@ -153,6 +151,12 @@ export default defineType({
           },
         },
       ],
+    }),
+    defineField({
+      name: "featured",
+      title: "Feature Post",
+      type: "boolean",
+      description: "Tick this if you will like to feature this post",
     }),
   ],
 });

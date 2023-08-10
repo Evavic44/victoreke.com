@@ -8,7 +8,7 @@ export default defineType({
   icon: BiUser,
   fields: [
     defineField({
-      name: "authorName",
+      name: "name",
       title: "Author Name",
       type: "string",
       validation: (rule) => rule.required(),
