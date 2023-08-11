@@ -2,8 +2,8 @@ export default function SunIcon() {
   return (
     <svg
       fill="currentColor"
-      width="25px"
-      height="25px"
+      width="22"
+      height="22"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

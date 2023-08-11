@@ -3,6 +3,7 @@ import { BiDetail } from "react-icons/bi";
 import FeaturedPosts from "../components/pages/FeaturedPosts";
 import Posts from "../components/pages/Posts";
 import { BiSolidStar } from "react-icons/bi";
+import Social from "../components/shared/Social";
 
 export const metadata: Metadata = {
   title: "Blog | Victor Eke",
@@ -34,7 +35,7 @@ export default async function Blog() {
               publications. Some of them include:
             </p>
           </div>
-          <div>Social Icons will show up here</div>
+          <Social type="publication" />
         </div>
       </section>
 
