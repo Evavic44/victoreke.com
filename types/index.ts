@@ -68,7 +68,10 @@ export type PostType = {
   tags: string[];
   author: {
     name: string;
-    photo: string;
+    photo: {
+      image: string;
+      alt: string;
+    };
     twitterUrl: string;
   };
   body: PortableTextBlock[];
