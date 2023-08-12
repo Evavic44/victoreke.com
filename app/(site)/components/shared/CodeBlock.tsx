@@ -48,9 +48,9 @@ export default function CodeBlock({ value }: codeTypes) {
         {/* // TODO: Implement copy code to clipboard feature */}
       </div>
       <Refractor
-        language={value.language || "js"}
+        language={value.language && value.language}
         value={value.code}
-        className="text-sm border-x border-b dark:border-zinc-800 border-zinc-200 rounded-b-lg"
+        className="text-sm border-x border-b dark:border-zinc-800 border-zinc-200 rounded-b-lg tracking-normal"
       />
     </div>
   );

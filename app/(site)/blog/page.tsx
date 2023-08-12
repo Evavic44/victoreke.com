@@ -32,7 +32,7 @@ export default async function Blog() {
           <div className="my-8">
             <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
               Aside from this blog, I&apos;ve also written for other
-              publications. Some of them include:
+              publications.
             </p>
           </div>
           <Social type="publication" />
@@ -40,23 +40,11 @@ export default async function Blog() {
       </section>
 
       <section>
-        <div>
-          <div className="flex items-center gap-x-3 mb-8">
-            <BiSolidStar className="text-yellow-500" />
-            <h2 className="text-xl font-semibold tracking-tight">Featured</h2>
-          </div>
-          <FeaturedPosts />
+        <div className="flex items-center gap-x-3 mb-8">
+          <BiDetail />
+          <h2 className="text-xl font-semibold tracking-tight">Explore All</h2>
         </div>
-
-        <div>
-          <div className="flex items-center gap-x-3 mb-8">
-            <BiDetail />
-            <h2 className="text-xl font-semibold tracking-tight">
-              Explore All
-            </h2>
-          </div>
-          <Posts />
-        </div>
+        <Posts />
       </section>
     </main>
   );

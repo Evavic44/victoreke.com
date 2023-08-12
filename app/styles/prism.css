@@ -14,16 +14,16 @@
 
 .dark {
   --lang-color: #ffffff;
-  --lang-background: #18181b;
+  --lang-background: #18181ba4;
   --text-shadow: #18181b;
   --selection-shade: #333333;
-  --accent-1: #43a6e7;
-  --accent-2: #86a840;
-  --accent-3: #10dbdb;
+  --accent-1: #4ab7ff;
+  --accent-2: #b4f72f;
+  --accent-3: #06fafa;
   --accent-4: #f5a207;
   --hue-1: transparent;
   --hue-2: #ffffff;
-  --hue-3: #af68d8;
+  --hue-3: #c26af5;
 }
 
 code[class*="language-"],

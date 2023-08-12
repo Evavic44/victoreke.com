@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { getPosts } from "@/lib/sanity.query";
 import { PostType } from "@/types";
+import EmptyState from "../shared/EmptyState";
 import { BiCalendar, BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
-import EmptyState from "../shared/EmptyState";
 
 export default async function Posts() {
   const posts: PostType[] = await getPosts();
@@ -17,8 +17,7 @@ export default async function Posts() {
             <article key={post._id}>
               <Link
                 href={`/blog/${post.slug}`}
-                key={post._id}
-                className="flex lg:flex-row flex-col lg:items-center items-start gap-8"
+                className="flex lg:flex-row flex-col lg:items-center items-start gap-8 dark:bg-primary-bg bg-secondary-bg p-6 rounded-lg border dark:border-zinc-800 border-zinc-200"
               >
                 <div className="relative lg:w-[450px] lg:h-52 w-full h-56">
                   <Image
