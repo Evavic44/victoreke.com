@@ -4,22 +4,36 @@ import {
   BiLogoFacebookSquare,
 } from "react-icons/bi";
 
-const options = [
-  {
-    icon: BiLogoTwitter,
-    url: "twitter.com/post",
-  },
-  {
-    icon: BiLogoLinkedinSquare,
-    url: "linkedin.com/in/post",
-  },
-  {
-    icon: BiLogoFacebookSquare,
-    url: "facebook.com/post",
-  },
-];
+type props = {
+  title: string;
+  url: string;
+};
 
-export default function SharePost() {
+export default function SharePost({ title, url }: props) {
+  const options = [
+    {
+      icon: BiLogoTwitter,
+      name: "Twitter",
+      shareUrl: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        title
+      )}&url=${encodeURIComponent(url)}`,
+    },
+    {
+      icon: BiLogoLinkedinSquare,
+      name: "LinkedIn",
+      shareUrl: `https://www.linkedin.com/shareArticle?mini=true&title=${encodeURIComponent(
+        title
+      )}&url=${encodeURIComponent(url)}`,
+    },
+    {
+      icon: BiLogoFacebookSquare,
+      name: "Facebook",
+      shareUrl: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        url
+      )}`,
+    },
+  ];
+
   return (
     <section className="border-b dark:border-zinc-800 border-zinc-200 pb-10">
       <h3 className="text-xl font-semibold tracking-tight mb-4">Share Post</h3>
@@ -28,10 +42,12 @@ export default function SharePost() {
         {options.map((x) => (
           <li>
             <a
-              href={x.url}
+              href={x.shareUrl}
+              rel="noopener noreferrer"
+              target="_blank"
               className="w-12 h-12 p-2 grid place-content-center text-2xl dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-md"
             >
-              <x.icon aria-label={`share to ${x.url}`} />
+              <x.icon aria-label={`share to ${x.name}`} />
             </a>
           </li>
         ))}

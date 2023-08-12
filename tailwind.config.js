@@ -15,8 +15,8 @@ module.exports = {
       colors: {
         "primary-color": "#33E092",
         "secondary-color": "#0CCE6B",
-        "primary-bg": "rgba(39, 39, 43, 0.3)",
-        "secondary-bg": "rgba(250, 250, 250, 0.3)",
+        "primary-bg": "rgba(39, 39, 43, 0.4)",
+        "secondary-bg": "rgba(250, 250, 250, 0.4)",
       },
       boxShadow: {
         "line-light": "rgba(17, 17, 26, 0.1) 0px 1px 0px",
@@ -28,6 +28,9 @@ module.exports = {
       backgroundImage: {
         noise:
           "url('https://res.cloudinary.com/victoreke/image/upload/v1691779257/victoreke/noise.png')",
+      },
+      backgroundPosition: {
+        zero: "0 0",
       },
     },
   },

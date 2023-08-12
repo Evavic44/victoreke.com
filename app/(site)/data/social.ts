@@ -7,6 +7,7 @@ import {
   BiLogoLinkedinSquare,
   BiLogoSteam,
   BiLogoTwitter,
+  BiLogoUnsplash,
 } from "react-icons/bi";
 import { FaFreeCodeCamp } from "react-icons/fa";
 
@@ -62,20 +63,27 @@ export const socialLinks = [
   },
   {
     id: 8,
+    name: "Unsplash",
+    url: "https://unsplash.com/@victoreke",
+    icon: BiLogoUnsplash,
+    status: "social",
+  },
+  {
+    id: 9,
     name: "FreeCodeCamp",
     url: "https://freecodecamp.org/news/author/victoreke/",
     icon: FaFreeCodeCamp,
     status: "publication",
   },
   {
-    id: 9,
+    id: 10,
     name: "Hashnode",
     url: "https://eke.hashnode.dev",
     icon: BiLinkExternal,
     status: "publication",
   },
   {
-    id: 10,
+    id: 11,
     name: "Sanity",
     url: "https://www.sanity.io/exchange/community/victoreke",
     icon: BiLinkExternal,
