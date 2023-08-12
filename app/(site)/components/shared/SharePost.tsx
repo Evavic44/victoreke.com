@@ -39,8 +39,8 @@ export default function SharePost({ title, url }: props) {
       <h3 className="text-xl font-semibold tracking-tight mb-4">Share Post</h3>
 
       <ul className="flex flex-wrap items-center gap-2 tracking-tight">
-        {options.map((x) => (
-          <li>
+        {options.map((x, id) => (
+          <li key={id}>
             <a
               href={x.shareUrl}
               rel="noopener noreferrer"
