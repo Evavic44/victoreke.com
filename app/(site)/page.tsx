@@ -2,12 +2,7 @@ import { getProfile } from "@/lib/sanity.query";
 import type { ProfileType } from "@/types";
 import HeroSvg from "./icons/HeroSvg";
 import Job from "./components/pages/Job";
-import {
-  BiLogoGithub,
-  BiLogoTwitter,
-  BiLogoCodepen,
-  BiLogoLinkedinSquare,
-} from "react-icons/bi";
+import Social from "./components/shared/Social";
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();
@@ -24,51 +19,7 @@ export default async function Home() {
               <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
                 {data.shortBio}
               </p>
-              <ul className="flex items-center flex-wrap gap-x-6 gap-y-4 my-10">
-                <li>
-                  <a
-                    href={data.socialLinks.github}
-                    rel="noreferer noopener"
-                    target="_blank"
-                    className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
-                  >
-                    <BiLogoGithub /> GitHub
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data.socialLinks.linkedin}
-                    rel="noreferer noopener"
-                    target="_blank"
-                    className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
-                  >
-                    <BiLogoLinkedinSquare />
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data.socialLinks.twitter}
-                    rel="noreferer noopener"
-                    target="_blank"
-                    className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
-                  >
-                    <BiLogoTwitter />
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data.socialLinks.codepen}
-                    rel="noreferer noopener"
-                    target="_blank"
-                    className="flex items-center gap-x-2 hover:text-zinc-500 hover:dark:text-primary-color"
-                  >
-                    <BiLogoCodepen />
-                    Codepen
-                  </a>
-                </li>
-              </ul>
+              <Social type="social" />
             </div>
           ))}
         <HeroSvg />

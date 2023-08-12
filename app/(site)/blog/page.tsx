@@ -3,6 +3,7 @@ import { BiDetail } from "react-icons/bi";
 import FeaturedPosts from "../components/pages/FeaturedPosts";
 import Posts from "../components/pages/Posts";
 import { BiSolidStar } from "react-icons/bi";
+import Social from "../components/shared/Social";
 
 export const metadata: Metadata = {
   title: "Blog | Victor Eke",
@@ -31,31 +32,19 @@ export default async function Blog() {
           <div className="my-8">
             <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
               Aside from this blog, I&apos;ve also written for other
-              publications. Some of them include:
+              publications.
             </p>
           </div>
-          <div>Social Icons will show up here</div>
+          <Social type="publication" />
         </div>
       </section>
 
       <section>
-        <div>
-          <div className="flex items-center gap-x-3 mb-8">
-            <BiSolidStar className="text-yellow-500" />
-            <h2 className="text-xl font-semibold tracking-tight">Featured</h2>
-          </div>
-          <FeaturedPosts />
+        <div className="flex items-center gap-x-3 mb-8">
+          <BiDetail />
+          <h2 className="text-xl font-semibold tracking-tight">Explore All</h2>
         </div>
-
-        <div>
-          <div className="flex items-center gap-x-3 mb-8">
-            <BiDetail />
-            <h2 className="text-xl font-semibold tracking-tight">
-              Explore All
-            </h2>
-          </div>
-          <Posts />
-        </div>
+        <Posts />
       </section>
     </main>
   );

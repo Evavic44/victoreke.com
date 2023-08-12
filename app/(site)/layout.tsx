@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${blender.variable} ${inter.className} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
+        className={`${blender.variable} ${inter.className} bg-noise bg-[200px,200px] bg-zero dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
       >
         <Navbar />
         {children}

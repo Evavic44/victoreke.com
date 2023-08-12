@@ -64,7 +64,7 @@ export default function Theme() {
     <div>
       <button
         onClick={toggleTheme}
-        className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 rounded-full p-2 duration-300 transition-transform text-xl ${
+        className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 rounded-full p-1 duration-300 transition-transform ${
           isLight ? "-rotate-180" : "rotate-0"
         }`}
       >

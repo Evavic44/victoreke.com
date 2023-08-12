@@ -106,9 +106,9 @@ export async function getFeaturedPosts() {
   );
 }
 
-export async function getSinglePost() {
+export async function getSinglePost(slug: string) {
   return client.fetch(
-    groq`*[_type == "Post"] | order(_createdAt asc){
+    groq`*[_type == "Post" && slug.current == $slug][0]{
       ${postField},
       _updatedAt,
       canonicalLink,
@@ -116,10 +116,14 @@ export async function getSinglePost() {
       tags,
       "author": author-> {
         name, 
-        photo, 
+        photo {
+          "image": asset->url,
+          alt
+        }, 
         twitterUrl
       },
       body,
-    }`
+    }`,
+    { slug }
   );
 }
