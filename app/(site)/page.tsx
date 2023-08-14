@@ -3,6 +3,7 @@ import type { ProfileType } from "@/types";
 import HeroSvg from "./icons/HeroSvg";
 import Job from "./components/pages/Job";
 import Social from "./components/shared/Social";
+import Link from "next/link";
 
 export default async function Home() {
   const profile: ProfileType[] = await getProfile();

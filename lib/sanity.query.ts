@@ -25,7 +25,7 @@ export async function getProfile() {
 
 export async function getJob() {
   return client.fetch(
-    groq`*[_type == "job"]{
+    groq`*[_type == "job"] | order(_createdAt desc){
       _id,
       name,
       jobTitle,
@@ -40,7 +40,7 @@ export async function getJob() {
 
 export async function getProjects() {
   return client.fetch(
-    groq`*[_type == "project"] | order(_createdAt asc){
+    groq`*[_type == "project"] | order(_createdAt desc){
       _id, 
       name,
       "slug": slug.current,
@@ -85,7 +85,7 @@ const postField = groq`
 
 export async function getPosts() {
   return client.fetch(
-    groq`*[_type == "Post"] | order(_createdAt asc){
+    groq`*[_type == "Post"] | order(_createdAt desc){
       ${postField},
       date,
       "author": author-> {

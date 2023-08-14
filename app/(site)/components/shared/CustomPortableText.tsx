@@ -65,7 +65,7 @@ export const CustomPortableText: PortableTextComponents = {
   },
   marks: {
     em: ({ children }) => (
-      <em className="dark:text-primary-color text-secondary-color">
+      <em className="dark:text-primary-color text-tertiary-color">
         {children}
       </em>
     ),
