@@ -39,9 +39,11 @@ export default async function Posts() {
                   <div className="flex items-center gap-x-4 mt-3 text-sm">
                     <div className="flex items-center gap-x-2">
                       <BiCalendar />
-                      <p className="">
-                        {post._createdAt && formatDate(post._createdAt)}
-                      </p>
+                      <time dateTime={post.date ? post.date : post._createdAt}>
+                        {post.date
+                          ? formatDate(post.date)
+                          : formatDate(post._createdAt)}
+                      </time>
                     </div>
                     <div className="flex items-center gap-x-2">
                       <BiTime />

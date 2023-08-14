@@ -17,25 +17,36 @@ type Props = {
 };
 
 const fallbackImage: string =
-  "https://res.cloudinary.com/victoreke/image/upload/v1690824172/victoreke/og-project.png";
+  "https://res.cloudinary.com/victoreke/image/upload/v1692002884/victoreke/blog.png";
 
 // Dynamic metadata for SEO
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//   const slug = params.post;
-//   const post: ProjectType = await getSinglePost(slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = params.post;
+  const post: PostType = await getSinglePost(slug);
 
-//   return {
-//     title: `${post.name}`,
-//     metadataBase: new URL(`https://victoreke.com/projects/${post.slug}`),
-//     description: post.tagline,
-//     openGraph: {
-//       images: post.coverImage?.image || fallbackImage,
-//       url: `https://victoreke.com/projects/${post.slug}`,
-//       title: post.name,
-//       description: post.tagline,
-//     },
-//   };
-// }
+  return {
+    title: `${post.title}`,
+    metadataBase: new URL(`https://victoreke.com/blog/${post.slug}`),
+    description: post.description,
+    publisher: post.author.name,
+    keywords: post.tags,
+    alternates: {
+      canonical:
+        post.canonicalLink || `https://victoreke.com/blog/${post.slug}`,
+    },
+    openGraph: {
+      images: post.coverImage?.image || fallbackImage,
+      url: `https://victoreke.com/blog/${post.slug}`,
+      title: post.title,
+      description: post.description,
+      type: "article",
+      siteName: "victoreke.com",
+      authors: post.author.name,
+      tags: post.tags,
+      publishedTime: post._createdAt,
+    },
+  };
+}
 
 export default async function Post({ params }: Props) {
   const slug = params.post;
@@ -54,13 +65,15 @@ export default async function Post({ params }: Props) {
           <div className="flex items-center gap-x-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
             <div className="flex items-center gap-x-2">
               <BiCalendar />
-              <p className="">
-                {post._createdAt && formatDate(post._createdAt)}
-              </p>
+              <time dateTime={post.date ? post.date : post._createdAt}>
+                {post.date
+                  ? formatDate(post.date)
+                  : formatDate(post._createdAt)}
+              </time>
             </div>
             <div className="flex items-center gap-x-2">
               <BiTime />
-              <p className="">5 min</p>
+              <div className="">5 min</div>
             </div>
           </div>
           <h1 className="md:text-5xl text-3xl mb-4">{post.title}</h1>
