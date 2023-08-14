@@ -12,7 +12,7 @@ export const CustomPortableText: PortableTextComponents = {
   block: {
     normal: ({ children }) => <p className="mt-2 mb-6">{children}</p>,
     h2: ({ children }) => (
-      <h2 className="before:content-['#'] before:hidden hover:before:inline-block before:absolute before:-left-5 before:text-2xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative font-bold tracking-tight dark:text-zinc-100 text-4xl text-zinc-700 my-8">
+      <h2 className="before:content-['#'] before:hidden hover:before:inline-block before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl block before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative font-bold tracking-tight dark:text-zinc-100 lg:text-4xl text-3xl text-zinc-700 my-8">
         <Link
           href={`#${children
             ?.toString()
@@ -26,7 +26,7 @@ export const CustomPortableText: PortableTextComponents = {
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="before:content-['#'] before:hidden hover:before:inline-block before:absolute before:-left-5 before:text-2xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative block font-bold tracking-tight text-3xl dark:text-zinc-100 text-zinc-700 my-6">
+      <h3 className="before:content-['#'] before:hidden hover:before:inline-block before:absolute lg:before:-left-5 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative block lg:font-bold font-semibold tracking-tight lg:text-3xl text-2xl dark:text-zinc-100 text-zinc-700 my-6">
         <Link
           href={`#${children
             ?.toString()
@@ -40,7 +40,7 @@ export const CustomPortableText: PortableTextComponents = {
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="before:content-['#'] before:hidden hover:before:inline-block before:absolute before:-left-6 before:text-2xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-xl dark:text-zinc-100 text-zinc-700 mb-2 mt-6">
+      <h4 className="before:content-['#'] before:hidden hover:before:inline-block before:absolute lg:before:-left-6 before:-left-4 lg:before:text-2xl before:text-xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-xl dark:text-zinc-100 text-zinc-700 mb-2 mt-4">
         <Link
           href={`#${children
             ?.toString()
@@ -87,7 +87,7 @@ export const CustomPortableText: PortableTextComponents = {
       );
     },
     code: ({ children }) => (
-      <code className="font-inter tracking-wider py-[0.15rem] px-1 rounded-sm dark:bg-primary-bg bg-secondary-bg dark:text-zinc-200 text-pink-500">
+      <code className="py-[0.15rem] px-1 rounded-sm font-medium dark:bg-primary-bg bg-secondary-bg dark:text-zinc-200 text-pink-500">
         {children}
       </code>
     ),

@@ -53,7 +53,7 @@ export type ProjectType = {
 
 export type PostType = {
   _id: string;
-  _createdAt?: string;
+  _createdAt: string;
   _updatedAt?: string;
   title: string;
   slug: string;

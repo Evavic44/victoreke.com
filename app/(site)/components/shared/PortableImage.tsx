@@ -16,9 +16,10 @@ export default function SampleImageComponent({ value }: imageProp) {
         src={urlFor(value).url()}
         alt={value.alt || ""}
         loading="lazy"
-        width={800}
+        width={1000}
         height={800}
         placeholder="blur"
+        quality={100}
         blurDataURL={urlFor(value).width(400).height(400).blur(100).url()}
       />
       {value.caption && (
