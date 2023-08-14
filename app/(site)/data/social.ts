@@ -1,6 +1,7 @@
 import {
   BiLinkExternal,
   BiLogoCodepen,
+  BiLogoDailymotion,
   BiLogoDribbble,
   BiLogoGithub,
   BiLogoInstagram,
@@ -8,6 +9,7 @@ import {
   BiLogoSteam,
   BiLogoTwitter,
   BiLogoUnsplash,
+  BiLogoYoutube,
 } from "react-icons/bi";
 import { FaFreeCodeCamp } from "react-icons/fa";
 
@@ -88,5 +90,19 @@ export const socialLinks = [
     url: "https://www.sanity.io/exchange/community/victoreke",
     icon: BiLinkExternal,
     status: "publication",
+  },
+  {
+    id: 12,
+    name: "Youtube",
+    url: "https://youtube.com/@victorekea",
+    icon: BiLogoYoutube,
+    status: "social",
+  },
+  {
+    id: 13,
+    name: "Daily.dev",
+    url: "https://app.daily.dev/Eke",
+    icon: BiLinkExternal,
+    status: "social",
   },
 ];
