@@ -9,3 +9,17 @@ h1 {
   font-weight: 900;
   letter-spacing: -1px;
 }
+
+.path {
+  stroke-dasharray: 500px 100px;
+  animation: animate 100s linear infinite alternate-reverse;
+}
+
+@keyframes animate {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 12433.8193359375;
+  }
+}
