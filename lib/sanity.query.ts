@@ -127,3 +127,9 @@ export async function getSinglePost(slug: string) {
     { slug }
   );
 }
+
+export async function getHeroes() {
+  return client.fetch(
+    groq`*[_type == "heroe"] | order(_createdAt asc) { _id, _createdAt, name, url, met }`
+  );
+}

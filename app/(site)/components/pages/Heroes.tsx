@@ -1,32 +1,45 @@
-// Fetch heroes that are true _document === 'profile' && heroes == true
+import { getHeroes } from "@/lib/sanity.query";
+import { HeroeType } from "@/types";
+import EasterEgg from "../shared/EasterEgg";
 
-const heroes: string[] = [
-  "Brad Traversy",
-  "Annie Bombanie",
-  "Sanusi Victor",
-  "Israel Mitolu",
-  "Spiff Jekey Green",
-  "Abigail Reinmemer",
-  "Franklin Ohaegbulam",
-];
+export default async function Heroes() {
+  const heroes: HeroeType[] = await getHeroes();
 
-export default function Heroes() {
   return (
-    <section className="mt-24 max-w-2xl">
+    <section className="mt-32 max-w-5xl">
       <h2 className="text-4xl mb-4 font-bold tracking-tight">Heroes</h2>
-      <p className="dark:text-zinc-400 text-zinc-600 max-w-xl">
-        I&apos;ve been fortunate enough to meet some of my heroes, but I still
-        have a long way to go. This is a list of some of the people I&apos;d
-        like to high five IRL.
+      <p className="dark:text-zinc-400 text-zinc-600 max-w-2xl">
+        Inspired by{" "}
+        <a
+          href="https://rafa.design"
+          rel="noreferrer noopener"
+          target="_blank"
+          className="dark:text-blue-400 text-blue-500 underline"
+        >
+          Rafael Conde&apos;s
+        </a>{" "}
+        heroes list, here&apos;s my own curated lineup of code conjurers and
+        digital dynamos that I&apos;m absolutely stoked to meet someday.{" "}
+        <strong className="font-semibold">"In no particular order"</strong>
       </p>
 
-      <ul className="flex flex-wrap items-center gap-3 mt-8 font-medium tracking-tight">
-        {heroes.map((heroe, id) => (
+      <ul className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mt-12 tracking-tight">
+        {heroes.map((heroe) => (
           <li
-            key={id}
-            className="dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md px-2 py-1"
+            key={heroe._id}
+            className="flex items-center gap-x-2 dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-md px-2 py-1"
           >
-            {heroe}
+            <EasterEgg isMet={heroe.met} />
+            <a
+              href={heroe.url}
+              rel="noreferrer noopener"
+              target="_blank"
+              className={`hover:underline ${
+                heroe.met ? "dark:text-green-300 text-green-800" : null
+              }`}
+            >
+              {heroe.name}
+            </a>
           </li>
         ))}
       </ul>
