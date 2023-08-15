@@ -20,7 +20,9 @@ export default async function Heroes() {
         </a>{" "}
         heroes list, here&apos;s my own curated lineup of code conjurers and
         digital dynamos that I&apos;m absolutely stoked to meet someday.{" "}
-        <strong className="font-semibold">"In no particular order"</strong>
+        <strong className="font-semibold">
+          &quot;In no particular order&quot;
+        </strong>
       </p>
 
       <ul className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mt-12 tracking-tight">
