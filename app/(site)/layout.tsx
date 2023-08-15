@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import blender from "./font/font";
 import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
+import { Providers } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,23 +13,35 @@ const inter = Inter({
   variable: "--inter",
 });
 
-export const metadata: Metadata = {
+const options = {
   title: "Victor Eke | Software Developer",
-  metadataBase: new URL("https://victoreke.com"),
   description:
     "Victor Eke is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
+  url: "https://victoreke.com",
+  ogImage:
+    "https://res.cloudinary.com/victoreke/image/upload/v1690292066/victoreke/og.png",
+};
+
+export const metadata: Metadata = {
+  title: options.title,
+  metadataBase: new URL(options.url),
+  description: options.description,
   openGraph: {
-    title: "Victor Eke | Software Developer",
-    url: "https://victoreke.com",
-    siteName: "Victor Eke",
+    title: options.title,
+    url: options.url,
+    siteName: "victoreke.com",
     locale: "en-US",
     type: "website",
-    description:
-      "Victor Eke is a Software Developer and Technical Writer who is passionate about building solutions and contributing to open source communities",
-    images:
-      "https://res.cloudinary.com/victoreke/image/upload/v1690292066/victoreke/og.png",
+    description: options.description,
+    images: options.ogImage,
+  },
+  alternates: {
+    canonical: options.url,
   },
   twitter: {
+    title: options.title,
+    description: options.description,
+    images: options.ogImage,
     creator: "Victor Eke",
     creatorId: "@victorekea",
     card: "summary_large_image",
@@ -42,14 +55,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${blender.variable} ${inter.className} bg-noise bg-[200px,200px] bg-zero dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
       >
-        <Navbar />
-        {children}
-        <Analytics />
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Analytics />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
