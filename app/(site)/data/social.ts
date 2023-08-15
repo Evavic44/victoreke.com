@@ -1,7 +1,6 @@
 import {
   BiLinkExternal,
   BiLogoCodepen,
-  BiLogoDailymotion,
   BiLogoDribbble,
   BiLogoGithub,
   BiLogoInstagram,
@@ -11,7 +10,7 @@ import {
   BiLogoUnsplash,
   BiLogoYoutube,
 } from "react-icons/bi";
-import { FaFreeCodeCamp } from "react-icons/fa";
+import { FaFreeCodeCamp, FaProductHunt } from "react-icons/fa";
 
 export const socialLinks = [
   {
@@ -103,6 +102,13 @@ export const socialLinks = [
     name: "Daily.dev",
     url: "https://app.daily.dev/Eke",
     icon: BiLinkExternal,
+    status: "social",
+  },
+  {
+    id: 14,
+    name: "Producthunt",
+    url: "https://www.producthunt.com/@victorekea",
+    icon: FaProductHunt,
     status: "social",
   },
 ];

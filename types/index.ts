@@ -77,3 +77,11 @@ export type PostType = {
   body: PortableTextBlock[];
   featured: boolean;
 };
+
+export type HeroeType = {
+  _id: string;
+  _createdAt: string;
+  name: string;
+  url: string;
+  met: boolean;
+};
