@@ -45,6 +45,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       tags: post.tags,
       publishedTime: post._createdAt,
     },
+    twitter: {
+      title: post.title,
+      description: post.description,
+      images: post.coverImage?.image || fallbackImage,
+      creator: post.author.name,
+      creatorId: post.author.twitterUrl,
+      card: "summary_large_image",
+    },
   };
 }
 

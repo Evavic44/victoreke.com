@@ -12,6 +12,7 @@ import python from "refractor/lang/python";
 import html from "refractor/lang/markup";
 import yaml from "refractor/lang/yaml";
 import graphql from "refractor/lang/graphql";
+import json from "refractor/lang/json";
 import { BiCopy } from "react-icons/bi";
 
 // Supported languages: https://prismjs.com/#supported-languages
@@ -28,6 +29,7 @@ Refractor.registerLanguage(python);
 Refractor.registerLanguage(html);
 Refractor.registerLanguage(yaml);
 Refractor.registerLanguage(graphql);
+Refractor.registerLanguage(json);
 
 type codeTypes = {
   value: {
@@ -48,7 +50,7 @@ export default function CodeBlock({ value }: codeTypes) {
         {/* // TODO: Implement copy code to clipboard feature */}
       </div>
       <Refractor
-        language={value.language && value.language}
+        language={value.language ? value.language : "jsx"}
         value={value.code}
         className="text-sm border-x border-b dark:border-zinc-800 border-zinc-200 rounded-b-lg tracking-normal"
       />
