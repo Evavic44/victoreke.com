@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import { BiDetail } from "react-icons/bi";
-import FeaturedPosts from "../components/pages/FeaturedPosts";
 import Posts from "../components/pages/Posts";
-import { BiSolidStar } from "react-icons/bi";
 import Social from "../components/shared/Social";
 
 export const metadata: Metadata = {
