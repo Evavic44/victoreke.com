@@ -7,12 +7,12 @@ export default async function FeaturedPosts({ params }: { params: string }) {
   const featuredPosts: PostType[] = await getPosts();
 
   return (
-    <section className="flex flex-col gap-y-4">
+    <>
       {featuredPosts.map((post) =>
         post.featured !== true ? null : (
           <article
             key={post._id}
-            className={`${post.slug === params ? "hidden" : "block"}`}
+            className={`mb-4 ${post.slug === params ? "hidden" : "block"}`}
           >
             <Link
               href={`/blog/${post.slug}`}
@@ -41,6 +41,6 @@ export default async function FeaturedPosts({ params }: { params: string }) {
           </article>
         )
       )}
-    </section>
+    </>
   );
 }
