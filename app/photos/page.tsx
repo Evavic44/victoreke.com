@@ -33,7 +33,7 @@ export default function Photos() {
         <Slide delay={0.12} className="flex flex-wrap gap-2">
           {images.map((image) => (
             <Image
-              id={image.id}
+              key={image.id}
               src={image.src}
               alt="playing guitar"
               width={350}
