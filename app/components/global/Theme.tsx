@@ -26,6 +26,7 @@ export default function Theme() {
       className={`dark:bg-primary-bg bg-zinc-100 dark:text-primary-color text-zinc-500 rounded-full p-1 duration-300 transition-transform ${
         currentTheme === "light" ? "-rotate-180" : "rotate-0"
       }`}
+      aria-label="Toggle Theme"
     >
       {currentTheme === "light" ? <SunIcon /> : <MoonIcon />}
     </button>
