@@ -36,7 +36,7 @@ export default function EasterEgg({ isMet }: { isMet: boolean }) {
       </button>
 
       <Image
-        className={`fixed z-30 bottom-96 duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`fixed z-30 bottom-1/2 duration-1000 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           image ? "left-0" : "-left-80"
         }`}
         src={funImage}

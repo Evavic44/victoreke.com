@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getJob } from "@/lib/sanity.query";
 import type { JobType } from "@/types";
 import { formatDate } from "../../utils/date";
-import { Slide } from "@/app/animation/Slide";
+import { Slide } from "../../animation/Slide";
 
 export default async function Job() {
   const job: JobType[] = await getJob();

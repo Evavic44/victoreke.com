@@ -38,14 +38,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: options.url,
   },
-  twitter: {
-    title: options.title,
-    description: options.description,
-    images: options.ogImage,
-    creator: "Victor Eke",
-    creatorId: "@victorekea",
-    card: "summary_large_image",
-  },
   themeColor: "#33E092",
 };
 
