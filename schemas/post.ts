@@ -32,8 +32,8 @@ export default defineType({
       rows: 4,
       validation: (Rule) => [
         Rule.required()
-          .min(150)
-          .error("A description of min 150 characters is required"),
+          .min(100)
+          .error("A description of min 100 characters is required"),
       ],
     }),
     defineField({
