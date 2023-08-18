@@ -31,7 +31,7 @@ export default async function About() {
           <div key={data._id}>
             <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-6 justify-items-center">
               <div className="order-2 lg:order-none">
-                <h1 className="lg:text-5xl text-4xl lg:leading-tight basis-1/2 mb-8">
+                <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl lg:leading-tight basis-1/2 mb-8">
                   I&apos;m {data.fullName}. I live in {data.location}, where I
                   build the future.
                 </h1>

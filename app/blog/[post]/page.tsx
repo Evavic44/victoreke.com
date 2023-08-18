@@ -63,7 +63,12 @@ export default async function Post({ params }: Props) {
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <header className="relative flex items-center gap-x-2 border-b dark:border-zinc-800 border-zinc-200 pb-8">
-        <Link href="/blog">Blog</Link>
+        <Link
+          href="/blog"
+          className="whitespace-nowrap dark:text-zinc-400 text-zinc-400 hover:dark:text-white hover:text-zinc-700 text-sm border-b dark:border-zinc-700 border-zinc-200"
+        >
+          cd ..
+        </Link>
         <BiChevronRight />
         <p className="text-zinc-400 text-sm truncate">{post.title}</p>
       </header>
@@ -84,7 +89,9 @@ export default async function Post({ params }: Props) {
               <div className="">5 min</div>
             </div>
           </div>
-          <h1 className="md:text-5xl text-3xl mb-4">{post.title}</h1>
+          <h1 className="font-incognito font-semibold tracking-tight sm:text-[2.5rem] lg:leading-none leading-tight text-3xl mb-4">
+            {post.title}
+          </h1>
           <p className="dark:text-zinc-400 text-zinc-600 max-w-2xl">
             {post.description}
           </p>

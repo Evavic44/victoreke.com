@@ -36,7 +36,7 @@ export default async function Heroes() {
               href={heroe.url}
               rel="noreferrer noopener"
               target="_blank"
-              className={`hover:underline ${
+              className={`font-incognito tracking-wide hover:underline ${
                 heroe.met ? "dark:text-green-300 text-green-800" : null
               }`}
             >

@@ -22,8 +22,8 @@ export default async function Project() {
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <section className="max-w-2xl mb-16">
-        <h1 className="text-3xl sm:text-5xl mb-6 lg:leading-[3.7rem]">
-          Featured projects
+        <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl mb-6 lg:leading-[3.7rem]">
+          Projects
         </h1>
         <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
           I&apos;ve worked on tons of little projects over the years but these
@@ -50,7 +50,7 @@ export default async function Project() {
                 className="dark:bg-zinc-800 bg-zinc-100 rounded-md p-2"
               />
               <div>
-                <h2 className="font-semibold mb-1">{project.name}</h2>
+                <h2 className="text-lg tracking-wide mb-1">{project.name}</h2>
                 <div className="text-sm dark:text-zinc-400 text-zinc-600">
                   {project.tagline}
                 </div>

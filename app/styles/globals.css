@@ -4,10 +4,11 @@
 
 @import "prism.css";
 
-h1 {
-  font-family: var(--blender);
-  font-weight: 900;
-  letter-spacing: -1px;
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--incognito), "Inter", sans-serif;
 }
 
 .path {

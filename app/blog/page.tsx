@@ -19,7 +19,7 @@ export default async function Blog() {
     <main className="max-w-7xl mx-auto md:px-16 px-6">
       <section className="max-w-[950px] mb-12 pb-12 border-b dark:border-zinc-800 border-zinc-100">
         <div className="max-w-2xl">
-          <h1 className="text-3xl sm:text-5xl mb-6 lg:leading-[3.7rem]">
+          <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl mb-6 lg:leading-[3.7rem]">
             Blog
           </h1>
           <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">

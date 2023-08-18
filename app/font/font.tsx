@@ -1,34 +1,30 @@
 import localFont from "next/font/local";
 
-const blender = localFont({
+const incognito = localFont({
   src: [
     {
-      path: "BlenderPro-Heavy.woff",
+      path: "incognito_bold.woff2",
       weight: "800",
       style: "normal",
     },
     {
-      path: "BlenderPro-Bold.woff",
+      path: "incognito_condensed.woff2",
       weight: "700",
       style: "normal",
     },
     {
-      path: "BlenderPro-Medium.woff",
+      path: "incognito_medium.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "BlenderPro-Book.woff",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "BlenderPro-Thin.woff",
+      path: "incognito_regular.woff2",
       weight: "400",
       style: "normal",
     },
   ],
-  variable: "--blender",
+  variable: "--incognito",
+  display: "swap",
 });
 
-export default blender;
+export default incognito;

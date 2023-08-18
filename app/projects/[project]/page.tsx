@@ -40,7 +40,7 @@ export default async function Project({ params }: Props) {
     <main className="max-w-6xl mx-auto lg:px-16 px-8">
       <div className="max-w-3xl mx-auto">
         <div className="flex items-start justify-between mb-4">
-          <h1 className="lg:text-5xl text-3xl lg:leading-tight mb-4 max-w-sm">
+          <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl mb-4 max-w-sm">
             {project.name}
           </h1>
 
