@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        blender: ["var(--blender)"],
+        incognito: ["var(--incognito)"],
         inter: ["var(--inter)"],
       },
       colors: {

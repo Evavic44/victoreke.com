@@ -6,7 +6,7 @@ import { BiLinkExternal } from "react-icons/bi";
 export const CustomPortableTextFavicon: PortableTextComponents = {
   block: {
     h3: ({ children }) => (
-      <h3 className="before:content-['#'] before:hidden hover:before:inline before:absolute before:-left-5 before:text-2xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-2xl mt-6 mb-2">
+      <h3 className="font-incognito before:content-['#'] before:hidden hover:before:inline before:absolute before:-left-5 before:text-2xl before:top-1/2 before:-translate-y-1/2 before:opacity-80 dark:before:text-zinc-500 before:text-zinc-400 relative inline-block font-semibold tracking-tight text-2xl mt-6 mb-2">
         <Link
           href={`#${children?.toString().toLowerCase().replaceAll(" ", "-")}`}
         >

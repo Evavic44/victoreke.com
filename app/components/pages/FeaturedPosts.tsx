@@ -30,7 +30,7 @@ export default async function FeaturedPosts({ params }: { params: string }) {
                 loading="lazy"
               />
               <div className="max-w-lg">
-                <h2 className="max-w-sm text-lg font-semibold tracking-tight mb-4">
+                <h2 className="max-w-sm text-lg tracking-tight mb-4">
                   {post.title}
                 </h2>
                 <p className="dark:text-zinc-400 text-zinc-600 text-sm">

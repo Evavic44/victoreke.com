@@ -3,14 +3,18 @@ import {
   BiLogoCodepen,
   BiLogoDribbble,
   BiLogoGithub,
+  BiLogoGitlab,
   BiLogoInstagram,
   BiLogoLinkedinSquare,
+  BiLogoStackOverflow,
   BiLogoSteam,
   BiLogoTwitter,
   BiLogoUnsplash,
   BiLogoYoutube,
 } from "react-icons/bi";
-import { FaFreeCodeCamp, FaProductHunt } from "react-icons/fa";
+import { FaFreeCodeCamp, FaGitlab, FaProductHunt } from "react-icons/fa";
+import { SiCodewars } from "react-icons/si";
+import { FaHashnode, FaHashtag, FaSquareGitlab } from "react-icons/fa6";
 
 export const socialLinks = [
   {
@@ -80,14 +84,14 @@ export const socialLinks = [
     id: 10,
     name: "Hashnode",
     url: "https://eke.hashnode.dev",
-    icon: BiLinkExternal,
+    icon: FaHashnode,
     status: "publication",
   },
   {
     id: 11,
     name: "Sanity",
     url: "https://www.sanity.io/exchange/community/victoreke",
-    icon: BiLinkExternal,
+    icon: FaHashtag,
     status: "publication",
   },
   {
@@ -109,6 +113,27 @@ export const socialLinks = [
     name: "Producthunt",
     url: "https://www.producthunt.com/@victorekea",
     icon: FaProductHunt,
+    status: "social",
+  },
+  {
+    id: 15,
+    name: "Stackoverflow",
+    url: "https://stackoverflow.com/users/14021166/victor-eke",
+    icon: BiLogoStackOverflow,
+    status: "social",
+  },
+  {
+    id: 16,
+    name: "Codewars",
+    url: "https://www.codewars.com/users/victoreke",
+    icon: SiCodewars,
+    status: "social",
+  },
+  {
+    id: 17,
+    name: "Gitlab",
+    url: "https://gitlab.com/victoreke",
+    icon: BiLogoGitlab,
     status: "social",
   },
 ];
