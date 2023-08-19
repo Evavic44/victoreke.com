@@ -57,13 +57,13 @@ export default function RootLayout({
           {children}
           <Analytics />
           <Footer />
-          <Script
-            async
-            src="http://localhost:3000/script.js"
-            data-website-id="a3ad2b7f-5bf9-4578-8a23-286ef9d64bb7"
-          />
         </Providers>
       </body>
+      <Script
+        async
+        src="https://umami-victor.vercel.app/script.js"
+        data-website-id="8a51e6af-840d-491e-912c-a82345d54e0d"
+      />
     </html>
   );
 }
