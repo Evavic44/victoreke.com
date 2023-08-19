@@ -1,5 +1,6 @@
 import "@/app/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import incognito from "./font/font";
@@ -56,6 +57,11 @@ export default function RootLayout({
           {children}
           <Analytics />
           <Footer />
+          <Script
+            async
+            src="http://localhost:3000/script.js"
+            data-website-id="a3ad2b7f-5bf9-4578-8a23-286ef9d64bb7"
+          />
         </Providers>
       </body>
     </html>
