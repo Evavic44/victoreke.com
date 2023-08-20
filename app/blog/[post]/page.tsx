@@ -1,6 +1,7 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import type { PostType } from "@/types";
 import { getSinglePost } from "@/lib/sanity.query";
 import { PortableText } from "@portabletext/react";
@@ -9,7 +10,7 @@ import { BiChevronRight, BiCalendar, BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
 import SharePost from "../../components/shared/SharePost";
 import FeaturedPosts from "../../components/pages/FeaturedPosts";
-import { Slide } from "@/app/animation/Slide";
+import { Slide } from "../../animation/Slide";
 
 type Props = {
   params: {
@@ -24,6 +25,9 @@ const fallbackImage: string =
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.post;
   const post: PostType = await getSinglePost(slug);
+  if (!post) {
+    notFound();
+  }
 
   return {
     title: `${post.title}`,
@@ -60,6 +64,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Post({ params }: Props) {
   const slug = params.post;
   const post: PostType = await getSinglePost(slug);
+  if (!post) {
+    notFound();
+  }
 
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">

@@ -40,6 +40,13 @@ type codeTypes = {
 };
 
 export default function CodeBlock({ value }: codeTypes) {
+  // Hide react defaultProps error on Refractor. Ref: https://github.com/reactjs/rfcs/pull/107
+  const error = console.error;
+  console.error = (...args: any) => {
+    if (/defaultProps/.test(args[0])) return;
+    error(...args);
+  };
+
   return (
     <div className="my-6">
       <div className="flex items-center justify-between bg-zinc-50 dark:bg-[#141414] border dark:border-zinc-800 border-zinc-200 rounded-t-lg px-4 py-3 translate-y-2">

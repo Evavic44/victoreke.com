@@ -10,7 +10,6 @@ export default function Theme() {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   function toggleTheme() {
-    console.log(currentTheme);
     return currentTheme === "light" ? setTheme("dark") : setTheme("light");
   }
   useEffect(() => setHasMounted(true), []);

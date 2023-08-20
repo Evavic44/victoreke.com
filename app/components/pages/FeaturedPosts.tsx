@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 import { getPosts } from "@/lib/sanity.query";
 import type { PostType } from "@/types";
 
-export default async function FeaturedPosts({ params }: { params: string }) {
+export default async function FeaturedPosts({ params }: { params?: string }) {
   const featuredPosts: PostType[] = await getPosts();
 
   return (
@@ -12,7 +12,9 @@ export default async function FeaturedPosts({ params }: { params: string }) {
         post.featured !== true ? null : (
           <article
             key={post._id}
-            className={`mb-4 ${post.slug === params ? "hidden" : "block"}`}
+            className={`mb-4 ${
+              post.slug === params ? "hidden" : "flex lg:flex-row flex-col"
+            }`}
           >
             <Link
               href={`/blog/${post.slug}`}
