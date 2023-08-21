@@ -68,6 +68,12 @@ export default defineType({
       ],
     }),
     defineField({
+      name: "featured",
+      title: "Feature Post",
+      type: "boolean",
+      description: "Add this post to the list of featured posts",
+    }),
+    defineField({
       name: "tags",
       title: "Post Tags",
       type: "array",
@@ -150,10 +156,10 @@ export default defineType({
       ],
     }),
     defineField({
-      name: "featured",
-      title: "Feature Post",
+      name: "isPublished",
+      title: "PUBLISH POST",
       type: "boolean",
-      description: "Tick this if you will like to feature this post",
+      description: "Tick this if you will like to publish this post",
     }),
   ],
 });

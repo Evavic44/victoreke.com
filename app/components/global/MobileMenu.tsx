@@ -11,6 +11,7 @@ import {
   HiUser,
 } from "react-icons/hi";
 import Logo from "../../../public/logo.png";
+import { Slide } from "../../animation/Slide";
 
 export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
@@ -39,9 +40,11 @@ export default function MobileMenu() {
 
   const onToggleNav = () => {
     setNavShow((status) => {
-      status
-        ? (document.body.style.overflow = `${status ? "auto" : "hidden"}`)
-        : null;
+      if (status) {
+        document.body.style.overflow = "auto";
+      } else {
+        document.body.style.overflow = "hidden";
+      }
       return !status;
     });
   };

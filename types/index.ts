@@ -76,6 +76,7 @@ export type PostType = {
   };
   body: PortableTextBlock[];
   featured: boolean;
+  isPublished: boolean;
 };
 
 export type HeroeType = {
