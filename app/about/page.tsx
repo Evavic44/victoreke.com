@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     url: "https://victoreke.com/about",
     description:
       "Learn more about my skills, experience and technical background",
+    images:
+      "https://res.cloudinary.com/victoreke/image/upload/v1692635746/victoreke/og.png",
   },
 };
 

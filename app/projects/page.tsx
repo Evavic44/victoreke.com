@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     title: "Projects | Victor Eke",
     url: "https://victoreke.com/projects",
     description: "Explore projects built by Victor Eke",
+    images:
+      "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/projects.png",
   },
 };
 

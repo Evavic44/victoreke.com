@@ -19,7 +19,7 @@ type Props = {
 };
 
 const fallbackImage: string =
-  "https://res.cloudinary.com/victoreke/image/upload/v1692608339/victoreke/blog.png";
+  "https://res.cloudinary.com/victoreke/image/upload/v1692636087/victoreke/blog.png";
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -170,7 +170,7 @@ export default async function Post({ params }: Props) {
 
             <SharePost
               title={post.title}
-              url={`https://victoreke.vercel.app/${post.slug}`} // TODO: Update url to victoreke.com
+              url={`https://victoreke.com/${post.slug}`}
             />
 
             <section className="border-b dark:border-zinc-800 border-zinc-200 pb-10">
