@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: post.author.name,
       tags: post.tags,
       publishedTime: post._createdAt,
+      modifiedTime: post._updatedAt || "",
     },
     twitter: {
       title: post.title,
@@ -59,8 +60,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images:
         urlFor(post.coverImage?.image).width(680).height(340).url() ||
         fallbackImage,
-      creator: post.author.name,
-      creatorId: post.author.twitterUrl,
+      creator: `@${post.author.twitterUrl.split("twitter.com/")[1]}`,
+      site: `@${post.author.twitterUrl.split("twitter.com/")[1]}`,
       card: "summary_large_image",
     },
   };
@@ -136,7 +137,10 @@ export default async function Post({ params }: Props) {
               <address className="flex items-center gap-x-3 mt-4 not-italic">
                 <div className="relative w-12 h-12">
                   <Image
-                    src={post.author.photo.image}
+                    src={urlFor(post.author.photo.image)
+                      .width(80)
+                      .height(80)
+                      .url()}
                     alt={post.author.photo.alt}
                     layout="fill"
                     className="dark:bg-zinc-800 bg-zinc-300 rounded-full object-cover"
@@ -150,6 +154,7 @@ export default async function Post({ params }: Props) {
                     href={post.author.twitterUrl}
                     className="text-blue-500 text-sm"
                     rel="noreferrer noopener"
+                    target="_blank"
                   >
                     {`@${post.author.twitterUrl.split("twitter.com/")[1]}`}
                   </a>
@@ -175,7 +180,8 @@ export default async function Post({ params }: Props) {
 
             <SharePost
               title={post.title}
-              url={`https://victoreke.com/${post.slug}`}
+              slug={post.slug}
+              description={post.description}
             />
 
             <section className="border-b dark:border-zinc-800 border-zinc-200 pb-10">
