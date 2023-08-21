@@ -9,7 +9,7 @@ export default async function FeaturedPosts({ params }: { params?: string }) {
   return (
     <>
       {featuredPosts.map((post) =>
-        post.featured !== true ? null : (
+        post.featured !== true || post.isPublished !== true ? null : (
           <article
             key={post._id}
             className={`mb-4 ${
@@ -21,13 +21,13 @@ export default async function FeaturedPosts({ params }: { params?: string }) {
               className="flex flex-col gap-4 dark:bg-primary-bg bg-secondary-bg p-5 rounded-lg border dark:border-zinc-800 border-zinc-200"
             >
               <Image
-                src={post.coverImage.image}
+                src={post.coverImage?.image}
                 className="dark:bg-zinc-800 bg-zinc-100 rounded-md object-cover"
-                alt={post.coverImage.alt || post.title}
+                alt={post.coverImage?.alt || post.title}
                 width={400}
                 height={230}
-                placeholder="blur"
-                blurDataURL={post.coverImage.lqip}
+                placeholder={post.coverImage ? "blur" : "empty"}
+                blurDataURL={post.coverImage?.lqip || ""}
                 quality={100}
                 loading="lazy"
               />

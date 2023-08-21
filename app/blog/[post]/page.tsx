@@ -19,7 +19,7 @@ type Props = {
 };
 
 const fallbackImage: string =
-  "https://res.cloudinary.com/victoreke/image/upload/v1692002884/victoreke/blog.png";
+  "https://res.cloudinary.com/victoreke/image/upload/v1692608339/victoreke/blog.png";
 
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -110,8 +110,8 @@ export default async function Post({ params }: Props) {
               <Image
                 className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
                 layout="fill"
-                src={post.coverImage.image || fallbackImage}
-                alt={post.coverImage.alt || post.title}
+                src={post.coverImage?.image || fallbackImage}
+                alt={post.coverImage?.alt || post.title}
                 quality={100}
                 placeholder={post.coverImage?.lqip ? `blur` : "empty"}
                 blurDataURL={post.coverImage?.lqip || ""}

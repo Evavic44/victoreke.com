@@ -80,7 +80,8 @@ const postField = groq`
     "lqip": asset->metadata.lqip,
     alt,
   },
-  featured
+  featured,
+  isPublished
 `;
 
 export async function getPosts() {
