@@ -5,6 +5,7 @@ import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { CustomPortableText } from "@/app/components/shared/CustomPortableText";
 import { Slide } from "../../animation/Slide";
+import { urlFor } from "@/lib/sanity.image";
 
 type Props = {
   params: {
@@ -25,7 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(`https://victoreke.com/projects/${project.slug}`),
     description: project.tagline,
     openGraph: {
-      images: project.coverImage?.image || fallbackImage,
+      images:
+        urlFor(project.coverImage?.image).width(1200).height(630).url() ||
+        fallbackImage,
       url: `https://victoreke.com/projects/${project.slug}`,
       title: project.name,
       description: project.tagline,

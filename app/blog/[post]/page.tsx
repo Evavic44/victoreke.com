@@ -11,6 +11,7 @@ import { formatDate } from "../../utils/date";
 import SharePost from "../../components/shared/SharePost";
 import FeaturedPosts from "../../components/pages/FeaturedPosts";
 import { Slide } from "../../animation/Slide";
+import { urlFor } from "@/lib/sanity.image";
 
 type Props = {
   params: {
@@ -40,7 +41,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         post.canonicalLink || `https://victoreke.com/blog/${post.slug}`,
     },
     openGraph: {
-      images: post.coverImage?.image || fallbackImage,
+      images:
+        urlFor(post.coverImage?.image).width(1200).height(630).url() ||
+        fallbackImage,
       url: `https://victoreke.com/blog/${post.slug}`,
       title: post.title,
       description: post.description,
@@ -53,7 +56,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       title: post.title,
       description: post.description,
-      images: post.coverImage?.image || fallbackImage,
+      images:
+        urlFor(post.coverImage?.image).width(680).height(340).url() ||
+        fallbackImage,
       creator: post.author.name,
       creatorId: post.author.twitterUrl,
       card: "summary_large_image",
