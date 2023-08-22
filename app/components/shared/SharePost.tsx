@@ -4,6 +4,7 @@ import {
   BiLogoTwitter,
   BiLogoLinkedinSquare,
   BiLogoFacebookSquare,
+  BiLogoWhatsapp,
 } from "react-icons/bi";
 
 type props = {
@@ -29,6 +30,11 @@ export default function SharePost({ title, slug, description }: props) {
       icon: BiLogoFacebookSquare,
       name: "Facebook",
       shareUrl: `https://www.facebook.com/sharer/sharer.php?u=${blog}${slug}`,
+    },
+    {
+      icon: BiLogoWhatsapp,
+      name: 'WhatsApp',
+      shareUrl: `https://api.whatsapp.com/send?text=${encodeURIComponent('Read this amazing article by Victor Eke')}.%0A%0A${title}%0A%0A${blog}${slug}`
     },
   ];
 

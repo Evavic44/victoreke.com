@@ -65,7 +65,7 @@ export const CustomPortableText: PortableTextComponents = {
   },
   marks: {
     em: ({ children }) => (
-      <em className="dark:text-primary-color text-tertiary-color">
+      <em className="font-incognito font-semibold dark:text-primary-color text-tertiary-color">
         {children}
       </em>
     ),
@@ -77,7 +77,7 @@ export const CustomPortableText: PortableTextComponents = {
     link: ({ children, value }) => {
       return (
         <a
-          className="inline-flex items-center justify-start gap-x-1 dark:text-blue-400 text-blue-500 hover:underline"
+          className="dark:text-blue-400 text-blue-500 hover:underline"
           href={value?.href}
           rel="noreferrer noopener"
           target="_blank"

@@ -2,8 +2,6 @@ import Image from "next/image";
 import sanitylogo from "@/public/sanity.png";
 import vercellogo from "@/public/vercel.svg";
 import nextjslogo from "@/public/nextjs.svg";
-import HeroSvg from "../../icons/HeroSvg";
-import { BiLogoGithub } from "react-icons/bi";
 import UnmountStudio from "./Unmount";
 
 export default function Footer() {
@@ -13,7 +11,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex lg:flex-row flex-col items-center lg:justify-between justify-center gap-y-4 md:px-16 px-6 py-16">
           <div className="flex md:flex-row flex-col items-center gap-x-2">
             <h3 className="font-inter">Built with:</h3>
-            <ul className="flex items-center gap-x-2 text-sm dark:text-zinc-600 text-zinc-400">
+            <ul className="flex items-center gap-x-2 text-sm dark:text-zinc-600 text-zinc-400 md:mt-0 mt-3">
               <li>
                 <a
                   href="https://sanity.io"
@@ -30,7 +28,6 @@ export default function Footer() {
                   Sanity
                 </a>
               </li>
-              •
               <li>
                 <a
                   href="https://nextjs.org"
@@ -47,7 +44,6 @@ export default function Footer() {
                   Next.js
                 </a>
               </li>
-              •
               <li>
                 <a
                   href="https://vercel.com"
@@ -64,7 +60,6 @@ export default function Footer() {
                   Vercel
                 </a>
               </li>
-              •
             </ul>
           </div>
 
