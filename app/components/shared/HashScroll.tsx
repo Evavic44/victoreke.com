@@ -1,27 +1,38 @@
 // "use client";
+import Link from "next/link";
 
-// import Link from "next/link";
-// import React, { useRef } from "react";
+type props = {
+  text: React.ReactNode;
+  event?: any;
+};
 
-// export default function HashScroll({ text }: { text: React.ReactNode }) {
-//   function scrollIntoView(e: any) {
-//     const el = document.getElementsByTagName(
-//       e.currentTarget.tagName.toLowerCase()
-//     );
-//   }
+// export const scrollTop = (header: HTMLHeadingElement) => {
+//   header.scrollIntoView({ behavior: "smooth" });
+// };
 
-//   return (
-//     <Link
-//       id={`#${text}`}
-//       onClick={scrollIntoView}
-//       href={`#${text
-//         ?.toString()
-//         .toLowerCase()
-//         .replaceAll(/[^-\w]+/g, "-")
-//         .replaceAll(/--+/g, "-")
-//         .replace(/^-|-$/g, "")}`}
-//     >
-//       {text}
-//     </Link>
-//   );
-// }
+export const slugify = (id: any) => {
+  if (id) {
+    id.toString()
+      .toLowerCase()
+      .replaceAll(/[^-\w]+/g, "-")
+      .replaceAll(/--+/g, "-")
+      .replace(/^-|-$/g, "");
+  }
+  return "";
+};
+
+export default function HashScroll({ text, event }: props) {
+  return (
+    <Link
+      onClick={event}
+      href={`#${text
+        ?.toString()
+        .toLowerCase()
+        .replaceAll(/[^-\w]+/g, "-")
+        .replaceAll(/--+/g, "-")
+        .replace(/^-|-$/g, "")}`}
+    >
+      {text}
+    </Link>
+  );
+}
