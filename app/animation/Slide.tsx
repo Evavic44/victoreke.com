@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 
 type props = {
   children: React.ReactNode;
-  className?: any;
+  className?: string;
   delay?: number;
 };
 
