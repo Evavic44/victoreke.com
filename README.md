@@ -93,7 +93,7 @@ If you expereinced any issues or enquiries, please raise an issue to discuss it.
 
 ## Additional Information
 
-Need more guidiance, check out this [tutorial][sanity-guide] that provides a step-by-step guide to setting up Sanity studio for your personal site.
+Need more guidiance, check out this [tutorial][sanity-guide] that provides a step-by-step guide to setting up Sanity studio for your portfolio site.
 
 ## Build
 
