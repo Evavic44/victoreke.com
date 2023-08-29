@@ -128,6 +128,6 @@ npm run build
 [env-example]: ./env.example
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio
-[sanity-api]: ./lib/sanity.api.ts
+[sanity-api]: https://github.com/Evavic44/victoreke.com/blob/d526d77b3902d6339dd3eee9e95c27b7b55f3ca9/lib/sanity.api.ts#L13-L16C3
 [sanity-manage]: https://sanity.io/manage
 [sanity-guide]: https://www.freecodecamp.org/news/how-to-build-a-portfolio-site-with-sanity-and-nextjs
