@@ -24,21 +24,76 @@
 | --------------------- | -------------------------------- |
 | ![Site][site-preview] | ![Sanity Studio][studio-preview] |
 
-# How to run locally
+## Run Project Locally
 
-Follow these steps below to run Spekni locally in your machine.
+Follow this guide to get this site runnning locally:
 
-```bash
+### Clone Repository
+
+```js
 git clone https://github.com/Evavic44/victoreke.com.git
 
 cd victoreke.com
 
 npm install
-
-npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+- Rename [`.env.example`][env-example] to `.env`
+
+### Get Env variables
+
+The secrets variables required to boot this project locally includes:
+
+- `Project Id`
+- `Dataset`
+- `API Version`
+- `Access Token`
+
+These variables come from Sanity. To get them, you need to setup your own Sanity instance. Follow the steps below to do this:
+
+### Create a new sanity project
+
+Run the command below in a terminal to create a new Sanity project:
+
+```js
+npm create sanity@latest -- --template clean --create-project "John Doe" --dataset production
+```
+
+- **Create an account**: If you already have a Sanity account, this will automatically connect to it, if not, select a login provider from the list of options, hit `Enter` and follow the prompt to create one.
+- **Choose an Output path**: Hit the `Enter` key to select the default path.
+- Install the dependencies with your preferred package manager
+
+Once completed open up the studio directory.
+
+```js
+cd john-doe
+
+code .
+```
+
+- Navigate to the `sanity.config.ts` file in the root directory and copy the `projectId`. Now you can close the studio file.
+
+### Update Env Variables
+
+Open up the cloned repository and do the following:
+
+- Set `NEXT_PUBLIC_SANITY_PROJECT_ID` to the project id you copied earlier
+- Set `NEXT_PUBLIC_SANITY_DATASET` to `production` or the dataset name you used.
+- Set `NEXT_PUBLIC_SANITY_API_VERSION` to your current date in **YYYY-MM-DD** format or leave as is
+- If you want to use an access token, visit [sanity.io/manage][sanity-manage] > **project name** > **API** > **Token** to create one. Once generated, copy the token and set it to `NEXT_PUBLIC_SANITY_ACCESS_TOKEN`.
+
+> **Warning**
+> If you don't want to use a token, comment it out in the [sanity.api.ts][sanity-api] file or else it will throw errors.
+
+- Now run `npm run dev` and you can visit [http://localhost:3000][localhost] to see the project live.
+
+By default the UI will be blank. To start adding data to the site, visit your studio at [http://localhost:3000/studio][localhost-studio] to create your own documents.
+
+If you expereinced any issues or enquiries, please raise an issue to discuss it.
+
+## Additional Information
+
+Need more guidiance, check out this [tutorial][sanity-guide] that provides a step-by-step guide to setting up Sanity studio for your personal site.
 
 ## Build
 
@@ -70,3 +125,9 @@ npm run build
 [studio]: https://victoreke.com/studio
 [studio-preview]: ./public/studio.png
 [site-preview]: ./public/site.png
+[env-example]: ./env.example
+[localhost]: http://localhost:3000
+[localhost-studio]: http://localhost:3000/studio
+[sanity-api]: ./lib/sanity.api.ts
+[sanity-manage]: https://sanity.io/manage
+[sanity-guide]: https://www.freecodecamp.org/news/how-to-build-a-portfolio-site-with-sanity-and-nextjs
