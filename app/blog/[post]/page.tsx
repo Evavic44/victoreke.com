@@ -101,10 +101,10 @@ export default async function Post({ params }: Props) {
                     : formatDate(post._createdAt)}
                 </time>
               </div>
-              <div className="flex items-center gap-x-2">
+              {/* <div className="flex items-center gap-x-2">
                 <BiTime />
                 <div className="">5 min</div>
-              </div>
+              </div> */}
             </div>
             <h1 className="font-incognito font-semibold tracking-tight sm:text-[2.5rem] lg:leading-none leading-tight text-3xl mb-4">
               {post.title}
