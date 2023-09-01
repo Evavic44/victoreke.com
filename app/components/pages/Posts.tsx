@@ -51,10 +51,10 @@ export default async function Posts() {
                             : formatDate(post._createdAt)}
                         </time>
                       </div>
-                      <div className="flex items-center gap-x-2">
+                      {/* <div className="flex items-center gap-x-2">
                         <BiTime />
                         <p className="">5 min</p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </Link>
