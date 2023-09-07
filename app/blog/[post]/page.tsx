@@ -12,6 +12,7 @@ import SharePost from "../../components/shared/SharePost";
 import FeaturedPosts from "../../components/pages/FeaturedPosts";
 import { Slide } from "../../animation/Slide";
 import { urlFor } from "@/lib/sanity.image";
+import Buymeacoffee from "@/app/components/shared/Buymeacoffee";
 
 type Props = {
   params: {
@@ -192,6 +193,10 @@ export default async function Post({ params }: Props) {
             </section>
           </aside>
         </Slide>
+      </section>
+
+      <section className="max-w-3xl my-10 lg:border-t dark:border-zinc-800 border-zinc-200 lg:pt-16 pt-0">
+        <Buymeacoffee />
       </section>
 
       <footer className="mt-8 md:px-0">Newsletter Coming Soon...</footer>
