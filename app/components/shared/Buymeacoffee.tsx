@@ -10,6 +10,7 @@ export default function Buymeacoffee() {
       <img
         className="grayscale group-hover:grayscale-0 duration-300"
         alt="Buymeacoffee button"
+        loading="lazy"
         src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=victoreke&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
       />
     </a>

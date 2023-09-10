@@ -1,5 +1,4 @@
 import "@/app/styles/globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -55,14 +54,13 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
-          <Analytics />
           <Footer />
         </Providers>
       </body>
       <Script
         async
         src="https://statsvictor.vercel.app/script.js"
-        data-website-id="8a51e6af-840d-491e-912c-a82345d54e0d"
+        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ""}
       />
     </html>
   );
