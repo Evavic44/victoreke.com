@@ -90,9 +90,9 @@ export default async function Post({ params }: Props) {
         </Slide>
       </header>
 
-      <section>
+      <article>
         <Slide className="flex lg:flex-row flex-col relative" delay={0.1}>
-          <article className="min-h-full lg:border-r border-r-0 dark:border-zinc-800 border-zinc-200 basis-3/4 pt-10 pb-4 lg:pr-6 px-0">
+          <div className="min-h-full lg:border-r border-r-0 dark:border-zinc-800 border-zinc-200 basis-3/4 pt-10 pb-4 lg:pr-6 px-0">
             <div className="flex items-center gap-x-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
               <div className="flex items-center gap-x-2">
                 <BiCalendar />
@@ -128,7 +128,7 @@ export default async function Post({ params }: Props) {
             <div className="mt-8 dark:text-zinc-400 text-zinc-600 leading-relaxed tracking-tight text-lg">
               <PortableText value={post.body} components={CustomPortableText} />
             </div>
-          </article>
+          </div>
 
           <aside className="flex flex-col lg:max-h-full h-max gap-y-8 sticky top-2 bottom-auto right-0 basis-1/4 py-10 lg:px-6 px-0">
             <section className="border-b dark:border-zinc-800 border-zinc-200 pb-10">
@@ -193,7 +193,7 @@ export default async function Post({ params }: Props) {
             </section>
           </aside>
         </Slide>
-      </section>
+      </article>
 
       <section className="max-w-3xl my-10 lg:border-t dark:border-zinc-800 border-zinc-200 lg:pt-16 pt-0">
         <Buymeacoffee />
