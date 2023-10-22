@@ -101,7 +101,7 @@ export async function getPosts() {
 
 export async function getFeaturedPosts() {
   return client.fetch(
-    groq`*[_type == "Post" && featured == true] {
+    groq`*[_type == "Post" && featured == true] | order(_createdAt desc) {
       ${postField}
     }`
   );
