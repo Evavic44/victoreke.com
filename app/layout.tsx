@@ -38,7 +38,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: options.url,
   },
-  themeColor: "#33E092",
+  other: {
+    "google-site-verification": "IzcWMgn5Qjf-LCtA337KTGjivsf9bmod_1pZ-jxYQh8",
+  },
 };
 
 export default function RootLayout({
