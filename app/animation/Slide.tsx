@@ -17,7 +17,7 @@ export const Slide = ({ children, className, delay }: props) => {
     if (isInview) {
       controls.start("stop");
     }
-  }, [isInview]);
+  }, [controls, isInview]);
 
   return (
     <motion.div
