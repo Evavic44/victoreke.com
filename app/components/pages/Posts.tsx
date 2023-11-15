@@ -3,8 +3,9 @@ import Link from "next/link";
 import { getPosts } from "@/lib/sanity.query";
 import { PostType } from "@/types";
 import EmptyState from "../shared/EmptyState";
-import { BiCalendar, BiTime } from "react-icons/bi";
+import { BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
+import { HiCalendar } from "react-icons/hi";
 
 const fallbackImage: string =
   "https://res.cloudinary.com/victoreke/image/upload/v1692608339/victoreke/blog.png";
@@ -42,7 +43,7 @@ export default async function Posts() {
                     </p>
                     <div className="flex items-center gap-x-4 mt-3 text-sm">
                       <div className="flex items-center gap-x-2">
-                        <BiCalendar />
+                        <HiCalendar />
                         <time
                           dateTime={post.date ? post.date : post._createdAt}
                         >
