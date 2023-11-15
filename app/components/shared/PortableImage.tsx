@@ -10,17 +10,17 @@ type imageProp = {
 
 export default function SampleImageComponent({ value }: imageProp) {
   return (
-    <figure className="my-10">
+    <figure className="my-10 relative">
       <Image
-        className="dark:bg-zinc-800 bg-zinc-100 rounded-sm"
+        className="rounded-sm object-contain object-left-top aspect-auto"
         src={urlFor(value).url()}
         alt={value.alt || ""}
         loading="lazy"
-        width={1000}
-        height={800}
+        width={900}
+        height={900}
         placeholder="blur"
         quality={100}
-        blurDataURL={urlFor(value).width(400).height(400).blur(100).url()}
+        blurDataURL={urlFor(value).blur(10).quality(100).url()}
       />
       {value.caption && (
         <figcaption className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
