@@ -83,7 +83,7 @@ Open up the cloned repository and do the following:
 - If you want to use an access token, visit [sanity.io/manage][sanity-manage] > **project name** > **API** > **Token** to create one. Once generated, copy the token and set it to `NEXT_PUBLIC_SANITY_ACCESS_TOKEN`.
 
 > **Warning**
-> If you don't want to use a token, comment it out in the [sanity.api.ts][sanity-api] file or else it will throw errors.
+> If you don't want to use a token, comment it out in the [env.api.ts][env-api] file or else it will throw errors.
 
 - Now run `npm run dev` and you can visit [http://localhost:3000][localhost] to see the project live.
 
@@ -128,6 +128,6 @@ npm run build
 [env-example]: ./env.example
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio
-[sanity-api]: https://github.com/Evavic44/victoreke.com/blob/d526d77b3902d6339dd3eee9e95c27b7b55f3ca9/lib/sanity.api.ts#L13-L16C3
+[env-api]: https://github.com/Evavic44/victoreke.com/blob/d526d77b3902d6339dd3eee9e95c27b7b55f3ca9/lib/env.api.ts#L13-L16C3
 [sanity-manage]: https://sanity.io/manage
 [sanity-guide]: https://www.freecodecamp.org/news/how-to-build-a-portfolio-site-with-sanity-and-nextjs

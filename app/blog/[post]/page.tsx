@@ -6,13 +6,15 @@ import type { PostType } from "@/types";
 import { getSinglePost } from "@/lib/sanity.query";
 import { PortableText } from "@portabletext/react";
 import { CustomPortableText } from "../../components/shared/CustomPortableText";
-import { BiChevronRight, BiCalendar, BiTime } from "react-icons/bi";
+import { BiChevronRight, BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
 import SharePost from "../../components/shared/SharePost";
 import FeaturedPosts from "../../components/pages/FeaturedPosts";
 import { Slide } from "../../animation/Slide";
 import { urlFor } from "@/lib/sanity.image";
 import Buymeacoffee from "@/app/components/shared/Buymeacoffee";
+import Comments from "@/app/components/shared/Comments";
+import { HiCalendar, HiChat } from "react-icons/hi";
 
 type Props = {
   params: {
@@ -95,13 +97,20 @@ export default async function Post({ params }: Props) {
           <div className="min-h-full lg:border-r border-r-0 dark:border-zinc-800 border-zinc-200 basis-3/4 pt-10 pb-4 lg:pr-6 px-0">
             <div className="flex items-center gap-x-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
               <div className="flex items-center gap-x-2">
-                <BiCalendar />
+                <HiCalendar />
                 <time dateTime={post.date ? post.date : post._createdAt}>
                   {post.date
                     ? formatDate(post.date)
                     : formatDate(post._createdAt)}
                 </time>
               </div>
+              <Link
+                href="#comments"
+                className="flex items-center gap-x-2 dark:text-primary-color text-tertiary-color"
+              >
+                <HiChat />
+                <div className="#comments">Comments</div>
+              </Link>
               {/* <div className="flex items-center gap-x-2">
                 <BiTime />
                 <div className="">5 min</div>
@@ -195,11 +204,22 @@ export default async function Post({ params }: Props) {
         </Slide>
       </article>
 
-      <section className="max-w-3xl my-10 lg:border-t dark:border-zinc-800 border-zinc-200 lg:pt-16 pt-0">
-        <Buymeacoffee />
+      <section
+        id="#comments"
+        className="max-w-3xl mt-10 lg:border-t dark:border-zinc-800 border-zinc-200 lg:py-10 pt-0"
+      >
+        <h3 className="lg:text-4xl text-3xl font-semibold tracking-tight mb-8">
+          Comments
+        </h3>
+        <Comments />
       </section>
 
-      <footer className="mt-8 md:px-0">Newsletter Coming Soon...</footer>
+      <section className="max-w-3xl lg:py-10 pt-0">
+        <h3 className="lg:text-4xl text-3xl font-semibold tracking-tight mb-8">
+          Support
+        </h3>
+        <Buymeacoffee />
+      </section>
     </main>
   );
 }
