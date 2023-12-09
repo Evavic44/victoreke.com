@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 
-const incognito = localFont({
+export const incognito = localFont({
   src: [
     {
       path: "incognito_bold.woff2",
@@ -27,4 +27,29 @@ const incognito = localFont({
   display: "swap",
 });
 
-export default incognito;
+export const gitlabmono = localFont({
+  src: [
+    {
+      path: "gitlab-mono.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "gitlab-mono.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "gitlab-mono.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "gitlab-mono.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--gitlabmono",
+  display: "swap",
+});

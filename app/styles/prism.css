@@ -31,7 +31,10 @@ pre[class*="language-"] {
   color: var(--lang-color);
   background: none;
   text-shadow: 0 1px var(--text-shadow);
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: var(--gitlabmono), Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
+  font-size: 0.83rem;
+  font-weight: 200;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
