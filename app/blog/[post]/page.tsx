@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { PostType } from "@/types";
-import { getSinglePost } from "@/lib/sanity.query";
+import { singlePostQuery } from "@/lib/sanity.query";
 import { PortableText } from "@portabletext/react";
 import { CustomPortableText } from "../../components/shared/CustomPortableText";
 import { BiChevronRight, BiTime } from "react-icons/bi";
@@ -15,6 +15,7 @@ import { urlFor } from "@/lib/sanity.image";
 import Buymeacoffee from "@/app/components/shared/Buymeacoffee";
 import Comments from "@/app/components/shared/Comments";
 import { HiCalendar, HiChat } from "react-icons/hi";
+import { sanityFetch } from "@/lib/sanity.client";
 
 type Props = {
   params: {
@@ -28,7 +29,12 @@ const fallbackImage: string =
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.post;
-  const post: PostType = await getSinglePost(slug);
+  const post: PostType = await sanityFetch({
+    query: singlePostQuery,
+    tags: ["Post"],
+    qParams: { slug },
+  });
+
   if (!post) {
     notFound();
   }
@@ -72,7 +78,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Post({ params }: Props) {
   const slug = params.post;
-  const post: PostType = await getSinglePost(slug);
+  const post: PostType = await sanityFetch({
+    query: singlePostQuery,
+    tags: ["Post"],
+    qParams: { slug },
+  });
+
   if (!post) {
     notFound();
   }

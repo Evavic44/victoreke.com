@@ -1,10 +1,14 @@
 import { PortableText } from "@portabletext/react";
-import { getProfile } from "@/lib/sanity.query";
+import { profileQuery } from "@/lib/sanity.query";
 import type { ProfileType } from "@/types";
 import { CustomPortableTextFavicon } from "../shared/CustomPortableTextFavicon";
+import { sanityFetch } from "@/lib/sanity.client";
 
 export default async function Usage() {
-  const profile: ProfileType[] = await getProfile();
+  const profile: ProfileType[] = await sanityFetch({
+    query: profileQuery,
+    tags: ["profile"],
+  });
 
   return (
     <section className="max-w-2xl">

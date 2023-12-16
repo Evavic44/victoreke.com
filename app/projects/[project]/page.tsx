@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { getSingleProject } from "@/lib/sanity.query";
+import { singleProjectQuery } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { CustomPortableText } from "@/app/components/shared/CustomPortableText";
 import { Slide } from "../../animation/Slide";
 import { urlFor } from "@/lib/sanity.image";
+import { sanityFetch } from "@/lib/sanity.client";
 
 type Props = {
   params: {
@@ -19,7 +20,11 @@ const fallbackImage: string =
 // Dynamic metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.project;
-  const project: ProjectType = await getSingleProject(slug);
+  const project: ProjectType = await sanityFetch({
+    query: singleProjectQuery,
+    tags: ["project"],
+    qParams: { slug },
+  });
 
   return {
     title: `${project.name} | Project`,
@@ -38,7 +43,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Project({ params }: Props) {
   const slug = params.project;
-  const project: ProjectType = await getSingleProject(slug);
+  const project: ProjectType = await sanityFetch({
+    query: singleProjectQuery,
+    tags: ["project"],
+    qParams: { slug },
+  });
 
   return (
     <main className="max-w-6xl mx-auto lg:px-16 px-8">

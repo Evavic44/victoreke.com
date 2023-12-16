@@ -1,17 +1,21 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
-import { getPosts } from "@/lib/sanity.query";
+import { postsQuery } from "@/lib/sanity.query";
 import { PostType } from "@/types";
 import EmptyState from "../shared/EmptyState";
 import { BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
 import { HiCalendar } from "react-icons/hi";
+import { sanityFetch } from "@/lib/sanity.client";
 
 const fallbackImage: string =
   "https://res.cloudinary.com/victoreke/image/upload/v1692608339/victoreke/blog.png";
 
 export default async function Posts() {
-  const posts: PostType[] = await getPosts();
+  const posts: PostType[] = await sanityFetch({
+    query: postsQuery,
+    tags: ["Post"],
+  });
 
   return (
     <section>
