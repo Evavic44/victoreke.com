@@ -11,7 +11,6 @@ import {
   HiUser,
 } from "react-icons/hi";
 import Logo from "../../../public/logo.png";
-import { Slide } from "../../animation/Slide";
 
 export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);

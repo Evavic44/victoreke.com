@@ -1,14 +1,33 @@
-import { createClient, type ClientConfig } from "@sanity/client";
-import { projectId, dataset, apiVersion, useCdn, token } from "./env.api";
+import "server-only";
+import {
+  createClient,
+  type ClientConfig,
+  type QueryParams,
+} from "@sanity/client";
+import { projectId, dataset, apiVersion, token, mode } from "@/lib/env.api";
 
 const config: ClientConfig = {
   projectId,
   dataset,
   apiVersion,
-  useCdn,
-  token,
+  useCdn: mode === "development" ? true : false,
   ignoreBrowserTokenWarning: true,
+  token,
 };
+
 const client = createClient(config);
 
-export default client;
+export async function sanityFetch<QueryResponse>({
+  query,
+  qParams,
+  tags,
+}: {
+  query: string;
+  qParams?: QueryParams;
+  tags: string[];
+}): Promise<QueryResponse> {
+  return client.fetch<QueryResponse>(query, qParams, {
+    cache: mode === "development" ? "no-cache" : "force-cache",
+    next: { tags },
+  });
+}

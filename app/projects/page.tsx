@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { getProjects } from "@/lib/sanity.query";
+import { projectsQuery } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import EmptyState from "../components/shared/EmptyState";
 import { Slide } from "../animation/Slide";
+import { sanityFetch } from "@/lib/sanity.client";
 
 export const metadata: Metadata = {
   title: "Project | Victor Eke",
@@ -20,7 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Project() {
-  const projects: ProjectType[] = await getProjects();
+  const projects: ProjectType[] = await sanityFetch({
+    query: projectsQuery,
+    tags: ["project"],
+  });
 
   return (
     <main className="max-w-7xl mx-auto md:px-16 px-6">
