@@ -13,6 +13,7 @@ const config: ClientConfig = {
   useCdn: mode === "development" ? true : false,
   ignoreBrowserTokenWarning: true,
   token,
+  perspective: "published",
 };
 
 const client = createClient(config);

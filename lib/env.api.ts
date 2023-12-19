@@ -1,5 +1,3 @@
-export const useCdn = false;
-
 export const projectId = checkValue(
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   "NEXT_PUBLIC_SANITY_PROJECT_ID"
