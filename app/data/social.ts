@@ -104,7 +104,7 @@ export const socialLinks = [
   {
     id: 13,
     name: "Daily.dev",
-    url: "https://app.daily.dev/Eke",
+    url: "https://app.daily.dev/eke",
     icon: BiLinkExternal,
     status: "social",
   },
