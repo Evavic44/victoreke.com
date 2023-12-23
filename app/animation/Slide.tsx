@@ -23,16 +23,17 @@ export const Slide = ({ children, className, delay }: props) => {
     <motion.div
       ref={ref}
       variants={{
-        start: { opacity: 0, y: 50 },
-        stop: { opacity: 1, y: 0 },
+        start: { opacity: 0, translateY: 10 },
+        stop: { opacity: 1, translateY: 0 },
       }}
-      initial="start"
-      animate={controls}
       transition={{
-        ease: "linear",
+        ease: "easeInOut",
+        duration: 0.3,
         delay: delay,
-        duration: 0.2,
+        stiffness: 0.5,
       }}
+      animate={controls}
+      initial="start"
       className={className}
     >
       {children}
