@@ -123,8 +123,8 @@ npm run build
 [reactrefractor]: https://github.com/rexxars/react-refractor
 [site]: https://victoreke.com
 [studio]: https://victoreke.com/studio
-[studio-preview]: ./public/studio.png
-[site-preview]: ./public/site.png
+[studio-preview]: https://github.com/Evavic44/victoreke.com/assets/62628408/a2574479-a352-4437-ba67-14bd976e48eb
+[site-preview]: https://github.com/Evavic44/victoreke.com/assets/62628408/e84ac72f-1ba1-4c46-bfc0-2512ffa0e5fa
 [env-example]: ./env.example
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio
