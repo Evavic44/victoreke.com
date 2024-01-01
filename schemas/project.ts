@@ -60,72 +60,8 @@ const project = {
     defineField({
       name: "description",
       title: "Description",
-      type: "array",
+      type: "blockContent",
       description: "Write a full description about this project",
-      of: [
-        {
-          type: "block",
-          styles: [
-            { title: "Normal", value: "normal" },
-            { title: "H2", value: "h2" },
-            { title: "H3", value: "h3" },
-            { title: "H4", value: "h4" },
-            { title: "Quote", value: "blockquote" },
-          ],
-          marks: {
-            decorators: [
-              { title: "Strong", value: "strong" },
-              { title: "Emphasis", value: "em" },
-              { title: "Code", value: "code" },
-            ],
-          },
-        },
-        {
-          type: "image",
-          options: { hotspot: true },
-          fields: [
-            {
-              name: "caption",
-              title: "Image caption",
-              type: "string",
-              description: "Text displayed below the image.",
-            },
-            {
-              name: "alt",
-              title: "Alt text",
-              type: "string",
-              description: "Important for SEO and accessiblity.",
-            },
-          ],
-        },
-        {
-          type: "code",
-          options: {
-            language: "typescript",
-            withFilename: true,
-            highlightedLines: true,
-            languageAlternatives: [
-              { title: "Bash", value: "bash" },
-              { title: "CSS", value: "css" },
-              { title: "Groq", value: "graphql" },
-              { title: "HTML", value: "html" },
-              { title: "JavaScript", value: "js" },
-              { title: "Json", value: "json" },
-              { title: "JSX", value: "jsx" },
-              { title: "Markdown", value: "markdown" },
-              { title: "Python", value: "python" },
-              { title: "SASS", value: "sass" },
-              { title: "SCSS", value: "scss" },
-              { title: "Shell", value: "shell" },
-              { title: "SQL", value: "sql" },
-              { title: "TSX", value: "tsx" },
-              { title: "TypeScript", value: "ts" },
-              { title: "Xml", value: "xml" },
-              { title: "Yaml", value: "yaml" },
-            ],
-          },
-        },
-      ],
     }),
   ],
 };

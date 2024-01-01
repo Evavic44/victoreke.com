@@ -3,11 +3,18 @@ import { BiLinkExternal, BiSolidQuoteRight } from "react-icons/bi";
 import PortableImage from "./PortableImage";
 import CodeBlock from "./CodeBlock";
 import HashScroll from "./HashScroll";
+import getYoutubeId from "@/app/utils/get-youtubeId";
+import YoutubeIframe from "./YoutubeIframe";
 
 export const CustomPortableText: PortableTextComponents = {
   types: {
     image: PortableImage,
     code: CodeBlock,
+    youtube: ({ value }: { value: any }) => {
+      const { url } = value;
+      const id = getYoutubeId(url);
+      return <YoutubeIframe videoId={id} />;
+    },
   },
 
   block: {

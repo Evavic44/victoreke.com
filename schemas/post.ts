@@ -91,69 +91,8 @@ export default defineType({
     defineField({
       name: "body",
       title: "Post Body",
-      type: "array",
+      type: "blockContent",
       description: "Write your post content here",
-      of: [
-        {
-          type: "block",
-          styles: [
-            { title: "Normal", value: "normal" },
-            { title: "H2", value: "h2" },
-            { title: "H3", value: "h3" },
-            { title: "H4", value: "h4" },
-            { title: "Quote", value: "blockquote" },
-          ],
-          marks: {
-            decorators: [
-              { title: "Strong", value: "strong" },
-              { title: "Emphasis", value: "em" },
-              { title: "Code", value: "code" },
-            ],
-          },
-        },
-        {
-          type: "image",
-          options: { hotspot: true },
-          fields: [
-            {
-              name: "caption",
-              title: "Image caption",
-              type: "string",
-              description: "Text displayed below the image.",
-            },
-            {
-              name: "alt",
-              title: "Alt text",
-              type: "string",
-              description: "Important for SEO and accessiblity.",
-            },
-          ],
-        },
-        {
-          type: "code",
-          options: {
-            language: "typescript",
-            withFilename: true,
-            highlightedLines: true,
-            languageAlternatives: [
-              { title: "Bash", value: "bash" },
-              { title: "JavaScript", value: "js" },
-              { title: "TypeScript", value: "ts" },
-              { title: "TSX", value: "tsx" },
-              { title: "JSX", value: "jsx" },
-              { title: "CSS", value: "css" },
-              { title: "Groq", value: "graphql" },
-              { title: "HTML", value: "html" },
-              { title: "Json", value: "json" },
-              { title: "Markdown", value: "md" },
-              { title: "Python", value: "py" },
-              { title: "SCSS", value: "scss" },
-              { title: "SQL", value: "sql" },
-              { title: "Yaml", value: "yaml" },
-            ],
-          },
-        },
-      ],
     }),
     defineField({
       name: "isPublished",
