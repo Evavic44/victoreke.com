@@ -43,7 +43,7 @@ export default async function Job() {
                 />
               </a>
               <div className="flex flex-col items-start">
-                <h3 className="text-xl font-bold">{data.name}</h3>
+                <h3 className="text-xl font-semibold">{data.name}</h3>
                 <p>{data.jobTitle}</p>
                 <time className="text-sm text-zinc-500 mt-2 tracking-widest uppercase">
                   {formatDate(data.startDate)} -{" "}

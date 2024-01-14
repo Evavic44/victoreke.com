@@ -19,7 +19,7 @@ export default async function Home() {
           profile.map((data) => (
             <div key={data._id} className="lg:max-w-2xl max-w-2xl">
               <Slide>
-                <h1 className="font-incognito font-black tracking-tight text-3xl sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
+                <h1 className="font-incognito font-semibold tracking-tight text-3xl sm:text-5xl mb-6 lg:leading-[3.7rem] leading-tight lg:min-w-[700px] min-w-full">
                   {data.headline}
                 </h1>
                 <p className="text-base dark:text-zinc-400 text-zinc-600 leading-relaxed">
