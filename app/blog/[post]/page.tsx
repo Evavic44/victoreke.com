@@ -17,6 +17,7 @@ import Comments from "@/app/components/shared/Comments";
 import { HiCalendar, HiChat } from "react-icons/hi";
 import { sanityFetch } from "@/lib/sanity.client";
 import { readTime } from "@/app/utils/readTime";
+import PageHeading from "@/app/components/shared/PageHeading";
 
 type Props = {
   params: {
@@ -130,13 +131,10 @@ export default async function Post({ params }: Props) {
                 <div className="">{readTime(words)}</div>
               </div>
             </div>
-            <h1 className="font-incognito font-semibold tracking-tight sm:text-[2.5rem] lg:leading-none leading-tight text-3xl mb-4">
-              {post.title}
-            </h1>
-            <p className="dark:text-zinc-400 text-zinc-600 max-w-2xl">
-              {post.description}
-            </p>
-            <div className="relative w-full h-40 pt-[52.5%] mt-12">
+
+            <PageHeading title={post.title} description={post.description} />
+
+            <div className="relative w-full h-40 pt-[52.5%]">
               <Image
                 className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
                 layout="fill"
