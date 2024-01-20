@@ -9,6 +9,7 @@ import Heroes from "../components/pages/Heroes";
 import Usage from "../components/pages/Usage";
 import { Slide } from "../animation/Slide";
 import { sanityFetch } from "@/lib/sanity.client";
+import PageHeading from "@/app/components/shared/PageHeading";
 
 export const metadata: Metadata = {
   title: "About | Victor Eke",
@@ -39,7 +40,7 @@ export default async function About() {
             <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-6 justify-items-center">
               <div className="order-2 lg:order-none">
                 <Slide>
-                  <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl lg:leading-tight basis-1/2 mb-8">
+                  <h1 className="font-incognito font-semibold tracking-tight sm:text-5xl text-3xl lg:leading-tight basis-1/2 mb-8">
                     I&apos;m {data.fullName}. I live in {data.location}, where I
                     build the future.
                   </h1>
