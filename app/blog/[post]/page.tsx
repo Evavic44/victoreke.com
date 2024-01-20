@@ -4,9 +4,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { PostType } from "@/types";
 import { singlePostQuery } from "@/lib/sanity.query";
-import { PortableText } from "@portabletext/react";
+import { PortableText, toPlainText } from "@portabletext/react";
 import { CustomPortableText } from "../../components/shared/CustomPortableText";
-import { BiChevronRight, BiTime } from "react-icons/bi";
+import { BiChevronRight, BiSolidTime, BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
 import SharePost from "../../components/shared/SharePost";
 import FeaturedPosts from "../../components/pages/FeaturedPosts";
@@ -16,6 +16,7 @@ import Buymeacoffee from "@/app/components/shared/Buymeacoffee";
 import Comments from "@/app/components/shared/Comments";
 import { HiCalendar, HiChat } from "react-icons/hi";
 import { sanityFetch } from "@/lib/sanity.client";
+import { readTime } from "@/app/utils/readTime";
 
 type Props = {
   params: {
@@ -84,6 +85,8 @@ export default async function Post({ params }: Props) {
     qParams: { slug },
   });
 
+  const words = toPlainText(post.body);
+
   if (!post) {
     notFound();
   }
@@ -106,7 +109,7 @@ export default async function Post({ params }: Props) {
       <article>
         <Slide className="flex lg:flex-row flex-col relative" delay={0.1}>
           <div className="min-h-full lg:border-r border-r-0 dark:border-zinc-800 border-zinc-200 basis-3/4 pt-10 pb-4 lg:pr-6 px-0">
-            <div className="flex items-center gap-x-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
+            <div className="flex items-center flex-wrap gap-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
               <div className="flex items-center gap-x-2">
                 <HiCalendar />
                 <time dateTime={post.date ? post.date : post._createdAt}>
@@ -122,10 +125,10 @@ export default async function Post({ params }: Props) {
                 <HiChat />
                 <div className="#comments">Comments</div>
               </Link>
-              {/* <div className="flex items-center gap-x-2">
-                <BiTime />
-                <div className="">5 min</div>
-              </div> */}
+              <div className="flex items-center gap-x-2">
+                <BiSolidTime />
+                <div className="">{readTime(words)}</div>
+              </div>
             </div>
             <h1 className="font-incognito font-semibold tracking-tight sm:text-[2.5rem] lg:leading-none leading-tight text-3xl mb-4">
               {post.title}
@@ -216,7 +219,7 @@ export default async function Post({ params }: Props) {
       </article>
 
       <section
-        id="#comments"
+        id="comments"
         className="max-w-3xl mt-10 lg:border-t dark:border-zinc-800 border-zinc-200 lg:py-10 pt-0"
       >
         <h3 className="lg:text-4xl text-3xl font-semibold tracking-tight mb-8">

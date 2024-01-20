@@ -3,10 +3,12 @@ import Link from "next/link";
 import { postsQuery } from "@/lib/sanity.query";
 import { PostType } from "@/types";
 import EmptyState from "../shared/EmptyState";
-import { BiTime } from "react-icons/bi";
+import { BiSolidTime, BiTime } from "react-icons/bi";
 import { formatDate } from "../../utils/date";
 import { HiCalendar } from "react-icons/hi";
 import { sanityFetch } from "@/lib/sanity.client";
+import { readTime } from "@/app/utils/readTime";
+import { toPlainText } from "@portabletext/react";
 
 const fallbackImage: string =
   "https://res.cloudinary.com/victoreke/image/upload/v1692608339/victoreke/blog.png";
@@ -42,7 +44,7 @@ export default async function Posts() {
                     <h2 className="max-w-sm text-2xl font-semibold tracking-tight mb-4">
                       {post.title}
                     </h2>
-                    <p className="dark:text-zinc-400 text-zinc-600 text-[15.5px]">
+                    <p className="dark:text-zinc-400 text-zinc-600 text-[0.95rem]">
                       {post.description}
                     </p>
                     <div className="flex items-center gap-x-4 mt-3 text-sm">
@@ -56,10 +58,12 @@ export default async function Posts() {
                             : formatDate(post._createdAt)}
                         </time>
                       </div>
-                      {/* <div className="flex items-center gap-x-2">
-                        <BiTime />
-                        <p className="">5 min</p>
-                      </div> */}
+                      <div className="flex items-center gap-x-2">
+                        <BiSolidTime />
+                        <div className="">
+                          {readTime(toPlainText(post.body))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </Link>
