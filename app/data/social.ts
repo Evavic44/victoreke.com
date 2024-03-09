@@ -8,13 +8,12 @@ import {
   BiLogoLinkedinSquare,
   BiLogoStackOverflow,
   BiLogoSteam,
-  BiLogoTwitter,
   BiLogoUnsplash,
   BiLogoYoutube,
 } from "react-icons/bi";
-import { FaFreeCodeCamp, FaGitlab, FaProductHunt } from "react-icons/fa";
+import { FaFreeCodeCamp, FaProductHunt } from "react-icons/fa";
 import { SiCodewars } from "react-icons/si";
-import { FaHashnode, FaHashtag, FaSquareGitlab } from "react-icons/fa6";
+import { FaHashnode, FaHashtag, FaSquareXTwitter } from "react-icons/fa6";
 
 export const socialLinks = [
   {
@@ -26,9 +25,9 @@ export const socialLinks = [
   },
   {
     id: 2,
-    name: "Twitter",
+    name: "X",
     url: "https://twitter.com/victorekea",
-    icon: BiLogoTwitter,
+    icon: FaSquareXTwitter,
     status: "social",
   },
   {
