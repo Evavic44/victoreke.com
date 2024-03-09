@@ -101,4 +101,20 @@ export default defineType({
       description: "Tick this if you will like to publish this post",
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      isPublished: "isPublished",
+      date: "date",
+      media: "coverImage",
+    },
+    prepare(selection) {
+      const { isPublished, date } = selection;
+      return {
+        ...selection,
+        ...date,
+        subtitle: isPublished ? `${new Date(date).toDateString()}` : "Draft",
+      };
+    },
+  },
 });
