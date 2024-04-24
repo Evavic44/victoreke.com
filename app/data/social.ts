@@ -54,7 +54,7 @@ export const socialLinks = [
   {
     id: 6,
     name: "Instagram",
-    url: "https://instagram.com/victoreke",
+    url: "https://instagram.com/victorekea",
     icon: BiLogoInstagram,
     status: "social",
   },
