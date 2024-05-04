@@ -63,7 +63,7 @@ export default function RootLayout({
       <Script
         async
         src="https://statsvictor.vercel.app/script.js"
-        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ""}
+        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
       />
     </html>
   );
