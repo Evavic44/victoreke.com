@@ -37,8 +37,14 @@ const project = {
       name: "projectUrl",
       title: "Project URL",
       type: "url",
+      description: "Leaving this URL blank will add a coming soon to the link.",
+    },
+    {
+      name: "repository",
+      title: "Repository URL",
+      type: "url",
       description:
-        "Leaving this URL blank will add a coming soon to the button.",
+        'Leaving this URL blank will add a "No Repository" message to the link.',
     },
     {
       name: "coverImage",

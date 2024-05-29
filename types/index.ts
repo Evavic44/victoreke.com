@@ -15,14 +15,7 @@ export type ProfileType = {
   location: string;
   resumeURL: string;
   og: string;
-  // socialLinks: {
-  //   codepen: string;
-  //   github: string;
-  //   linkedin: string;
-  //   twitter: string;
-  // };
   usage: PortableTextBlock[];
-  // skills: string[];
 };
 
 export type JobType = {
@@ -42,6 +35,7 @@ export type ProjectType = {
   slug: string;
   tagline: string;
   projectUrl: string;
+  repository: string;
   logo: string;
   coverImage: {
     image: string;

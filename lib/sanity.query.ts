@@ -57,6 +57,7 @@ export const singleProjectQuery = groq`*[_type == "project" && slug.current == $
   _id,
   name,
   projectUrl,
+  repository,
   coverImage {
     "image": asset->url,
     "lqip": asset->metadata.lqip,
