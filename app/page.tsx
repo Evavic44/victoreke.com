@@ -1,6 +1,6 @@
 import { profileQuery } from "@/lib/sanity.query";
 import type { ProfileType } from "@/types";
-import HeroSvg from "./icons/HeroSvg";
+import HeroSvg from "./assets/icons/HeroSvg";
 import Job from "./components/pages/Job";
 import Social from "./components/shared/Social";
 import { Slide } from "./animation/Slide";
