@@ -21,7 +21,7 @@ export default function EasterEgg({ isMet }: { isMet: boolean }) {
 
   return (
     <>
-      <button onClick={toggleImage} className="cursor-default">
+      <button onClick={toggleImage}>
         {isMet !== true ? (
           <BiCheckbox
             className="text-3xl dark:text-zinc-300 text-zinc-600"

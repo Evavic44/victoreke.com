@@ -1,4 +1,5 @@
 import { socialLinks } from "../../data/social";
+import RefLink from "./RefLink";
 
 export default function Social({ type }: { type: string }) {
   return (
@@ -7,10 +8,8 @@ export default function Social({ type }: { type: string }) {
         .filter((item) => item.status === type)
         .map((value) => (
           <li key={value.id}>
-            <a
+            <RefLink
               href={value.url}
-              rel="noreferer noopener"
-              target="_blank"
               className="flex items-center border-b dark:border-b-zinc-800 border-zinc-200 group"
             >
               <value.icon
@@ -19,7 +18,7 @@ export default function Social({ type }: { type: string }) {
               />{" "}
               &nbsp;
               {value.name}
-            </a>
+            </RefLink>
           </li>
         ))}
     </ul>

@@ -3,6 +3,7 @@ import { HeroeType } from "@/types";
 import EasterEgg from "../shared/EasterEgg";
 import { Slide } from "../../animation/Slide";
 import { sanityFetch } from "@/lib/sanity.client";
+import RefLink from "../shared/RefLink";
 
 export default async function Heroes() {
   const heroes: HeroeType[] = await sanityFetch({
@@ -16,14 +17,12 @@ export default async function Heroes() {
         <h2 className="text-4xl mb-4 font-bold tracking-tight">Heroes</h2>
         <p className="dark:text-zinc-400 text-zinc-600 max-w-2xl">
           Inspired by{" "}
-          <a
+          <RefLink
             href="https://rafa.design"
-            rel="noreferrer noopener"
-            target="_blank"
             className="dark:text-blue-400 text-blue-500 underline"
           >
-            Rafael Conde&apos;s
-          </a>{" "}
+            Rafael Condo&apos;s
+          </RefLink>{" "}
           heroes list, here&apos;s my own curated lineup of code conjurers and
           digital dynamos that I&apos;m absolutely stoked to meet someday.{" "}
           <strong className="font-semibold">
@@ -39,16 +38,14 @@ export default async function Heroes() {
             className="flex items-center gap-x-2 dark:bg-primary-bg bg-zinc-100 border dark:border-zinc-800 border-zinc-200 rounded-md px-2 py-1"
           >
             <EasterEgg isMet={heroe.met} />
-            <a
+            <RefLink
               href={heroe.url}
-              rel="noreferrer noopener"
-              target="_blank"
               className={`font-incognito tracking-wide hover:underline ${
-                heroe.met ? "dark:text-green-300 text-green-800" : null
+                heroe.met && "dark:text-green-300 text-green-800"
               }`}
             >
               {heroe.name}
-            </a>
+            </RefLink>
           </li>
         ))}
       </ul>

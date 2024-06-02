@@ -4,6 +4,7 @@ import type { JobType } from "@/types";
 import { formatDate } from "../../utils/date";
 import { Slide } from "../../animation/Slide";
 import { sanityFetch } from "@/lib/sanity.client";
+import RefLink from "../shared/RefLink";
 
 export default async function Job() {
   const job: JobType[] = await sanityFetch({
@@ -28,10 +29,8 @@ export default async function Job() {
               key={data._id}
               className="flex items-start lg:gap-x-6 gap-x-4 max-w-2xl relative before:absolute before:bottom-0 before:top-[5rem] before:left-9 before:w-[1px] before:h-[calc(100%-70px)] dark:before:bg-zinc-800 before:bg-zinc-200"
             >
-              <a
+              <RefLink
                 href={data.url}
-                rel="noreferrer noopener"
-                target="_blank"
                 className="grid place-items-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 min-h-[80px] min-w-[80px] p-2 rounded-md overflow-clip relative"
               >
                 <Image
@@ -41,7 +40,7 @@ export default async function Job() {
                   width={50}
                   height={50}
                 />
-              </a>
+              </RefLink>
               <div className="flex flex-col items-start">
                 <h3 className="text-xl font-semibold">{data.name}</h3>
                 <p>{data.jobTitle}</p>

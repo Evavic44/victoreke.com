@@ -5,6 +5,7 @@ import CodeBlock from "./CodeBlock";
 import HashScroll from "./HashScroll";
 import getYoutubeId from "@/app/utils/get-youtubeId";
 import YoutubeIframe from "./YoutubeIframe";
+import RefLink from "./RefLink";
 
 export const CustomPortableText: PortableTextComponents = {
   types: {
@@ -81,14 +82,12 @@ export const CustomPortableText: PortableTextComponents = {
     ),
     link: ({ children, value }) => {
       return (
-        <a
-          className="dark:text-blue-400 text-blue-500 hover:underline"
+        <RefLink
           href={value?.href}
-          rel="noreferrer noopener"
-          target="_blank"
+          className="dark:text-blue-400 text-blue-500 hover:underline"
         >
           {children} <BiLinkExternal className="inline" aria-hidden="true" />
-        </a>
+        </RefLink>
       );
     },
     code: ({ children }) => (
