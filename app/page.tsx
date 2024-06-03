@@ -5,6 +5,7 @@ import Job from "./components/pages/Job";
 import Social from "./components/shared/Social";
 import { Slide } from "./animation/Slide";
 import { sanityFetch } from "@/lib/sanity.client";
+import ContributionGraph from "./components/pages/GithubCalendarComponent";
 
 export default async function Home() {
   const profile: ProfileType[] = await sanityFetch({
@@ -35,6 +36,7 @@ export default async function Home() {
           <HeroSvg />
         </Slide>
       </section>
+      <ContributionGraph />
       <Job />
     </main>
   );
