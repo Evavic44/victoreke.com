@@ -14,7 +14,6 @@
 - [Sanity.io][sanity]: Headless CMS and Content Lake
 - [TailwindCSS][tailwind] / CSS - Styling and UI
 - [Umami][umami]: Analytics
-- [PlanetScale][planetscale]: Database Storage for Analytics
 - [Next Themes][nexttheme]: Color Theme
 - [React Refractor][reactrefractor]: Syntax Highlighting
 
@@ -38,11 +37,11 @@ cd victoreke.com
 npm install
 ```
 
-- Rename [`.env.example`][env-example] to `.env`
+- Rename [`.env.example`][env-example] to `.env.local`
 
 ### Get Env variables
 
-The secrets variables required to boot this project locally includes:
+The minimal `env` variables required to boot this project locally includes:
 
 - `Project Id`
 - `Dataset`
