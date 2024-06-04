@@ -13,7 +13,7 @@ export default function RefLink({
   return (
     <Link
       href={href + "?ref=victoreke.com"}
-      rel="noreferrer noopener"
+      rel="noopener"
       target="_blank"
       className={className}
     >
