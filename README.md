@@ -14,7 +14,6 @@
 - [Sanity.io][sanity]: Headless CMS and Content Lake
 - [TailwindCSS][tailwind] / CSS - Styling and UI
 - [Umami][umami]: Analytics
-- [PlanetScale][planetscale]: Database Storage for Analytics
 - [Next Themes][nexttheme]: Color Theme
 - [React Refractor][reactrefractor]: Syntax Highlighting
 
@@ -38,11 +37,11 @@ cd victoreke.com
 npm install
 ```
 
-- Rename [`.env.example`][env-example] to `.env`
+- Rename [`.env.example`][env-example] to `.env.local`
 
 ### Get Env variables
 
-The secrets variables required to boot this project locally includes:
+The minimal `env` variables required to boot this project locally includes:
 
 - `Project Id`
 - `Dataset`
@@ -110,6 +109,9 @@ npm run build
 | [`studio`](./app/studio/[[...index]]/page.tsx) | Where Sanity Studio is mounted                  |
 | [`schemas`](./schemas)                         | Where Sanity Studio gets its content types from |
 | [`sanity.query.ts`](./lib/sanity.query.ts)     | Groq query for Sanity Schema data               |
+
+## License & Usage
+This portfolio is MIT-licensed so you are free to use it as an inspiration or you can just copy the whole thing (excluding my personal content of course), I don't really mind. Just make sure you link back to [victoreke.com][site] on the footer section as attribution to the original source.
 
 <!-- Link Refs -->
 
