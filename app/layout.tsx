@@ -61,8 +61,8 @@ export default function RootLayout({
         </Providers>
       </body>
       <Script
-        async
-        src="https://statsvictor.vercel.app/script.js"
+        defer
+        src="https://cloud.umami.is/script.js"
         data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
       />
     </html>
