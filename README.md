@@ -127,9 +127,9 @@ This portfolio is MIT-licensed so you are free to use it as an inspiration or yo
 [studio]: https://victoreke.com/studio
 [studio-preview]: https://github.com/Evavic44/victoreke.com/assets/62628408/a2574479-a352-4437-ba67-14bd976e48eb
 [site-preview]: https://github.com/Evavic44/victoreke.com/assets/62628408/e84ac72f-1ba1-4c46-bfc0-2512ffa0e5fa
-[env-example]: ./env.example
+[env-example]: https://github.com/Evavic44/victoreke.com/blob/main/.env.example
 [localhost]: http://localhost:3000
 [localhost-studio]: http://localhost:3000/studio
-[env-api]: https://github.com/Evavic44/victoreke.com/blob/d526d77b3902d6339dd3eee9e95c27b7b55f3ca9/lib/env.api.ts#L13-L16C3
+[env-api]: https://github.com/Evavic44/victoreke.com/blob/main/lib/env.api.ts
 [sanity-manage]: https://sanity.io/manage
 [sanity-guide]: https://www.freecodecamp.org/news/how-to-build-a-portfolio-site-with-sanity-and-nextjs
