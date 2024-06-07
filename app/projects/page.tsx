@@ -43,13 +43,19 @@ export default async function Project() {
                 key={project._id}
                 className="flex items-center gap-x-4 dark:bg-primary-bg bg-zinc-50 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 p-4 rounded-lg"
               >
-                <Image
-                  src={project.logo}
-                  width={60}
-                  height={60}
-                  alt={project.name}
-                  className="dark:bg-zinc-800 bg-zinc-100 rounded-md p-2"
-                />
+                {project.logo ? (
+                  <Image
+                    src={project.logo}
+                    width={60}
+                    height={60}
+                    alt={project.name}
+                    className="dark:bg-zinc-800 bg-zinc-100 rounded-md p-2"
+                  />
+                ) : (
+                  <div className="dark:bg-primary-bg bg-zinc-50 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 py-4 px-3 rounded-lg text-3xl">
+                    🪴
+                  </div>
+                )}
                 <div>
                   <h2 className="text-lg tracking-wide mb-1">{project.name}</h2>
                   <div className="text-sm dark:text-zinc-400 text-zinc-600">
