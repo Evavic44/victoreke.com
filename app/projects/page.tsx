@@ -52,7 +52,7 @@ export default async function Project() {
                     className="dark:bg-zinc-800 bg-zinc-100 rounded-md p-2"
                   />
                 ) : (
-                  <div className="dark:bg-primary-bg bg-zinc-50 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 py-4 px-3 rounded-lg text-3xl">
+                  <div className="dark:bg-primary-bg bg-zinc-50 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 p-2 rounded-lg text-3xl">
                     🪴
                   </div>
                 )}

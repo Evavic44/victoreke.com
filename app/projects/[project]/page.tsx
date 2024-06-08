@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     metadataBase: new URL(`https://victoreke.com/projects/${project.slug}`),
     description: project.tagline,
     openGraph: {
-      images:
-        urlFor(project.coverImage?.image).width(1200).height(630).url() ||
-        fallbackImage,
+      images: project.coverImage
+        ? urlFor(project.coverImage.image).width(1200).height(630).url()
+        : fallbackImage,
       url: `https://victoreke.com/projects/${project.slug}`,
       title: project.name,
       description: project.tagline,
@@ -93,9 +93,9 @@ export default async function Project({ params }: Props) {
           <div className="relative w-full h-40 pt-[52.5%]">
             <Image
               className="rounded-xl border dark:border-zinc-800 border-zinc-100 object-cover"
-              layout="fill"
-              src={project.coverImage?.image || fallbackImage}
-              alt={project.coverImage?.alt || project.name}
+              fill
+              src={project.coverImage?.image ?? fallbackImage}
+              alt={project.coverImage?.alt ?? project.name}
               quality={100}
               placeholder={project.coverImage?.lqip ? `blur` : "empty"}
               blurDataURL={project.coverImage?.lqip || ""}
