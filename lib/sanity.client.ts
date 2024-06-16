@@ -1,9 +1,5 @@
 import "server-only";
-import {
-  createClient,
-  type ClientConfig,
-  type QueryParams,
-} from "@sanity/client";
+import { createClient, type ClientConfig, type QueryParams } from "next-sanity";
 import { projectId, dataset, apiVersion, token, mode } from "@/lib/env.api";
 
 const config: ClientConfig = {
@@ -20,7 +16,7 @@ const client = createClient(config);
 
 export async function sanityFetch<QueryResponse>({
   query,
-  qParams,
+  qParams = {},
   tags,
 }: {
   query: string;

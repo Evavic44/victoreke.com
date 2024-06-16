@@ -18,14 +18,6 @@ export default defineType({
       title: "Profile Photo",
       type: "image",
       description: "Upload a profile photo. Recommended size 320 x 320",
-      fields: [
-        {
-          name: "alt",
-          title: "Alt",
-          type: "string",
-          description: "Describe this photo.",
-        },
-      ],
       options: {
         hotspot: true,
         metadata: ["lqip"],
