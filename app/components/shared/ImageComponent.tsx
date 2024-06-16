@@ -13,10 +13,11 @@ export default function ImageComponent({ src, alt }: imageProp) {
       src={urlFor(src).url()}
       alt={alt}
       loading="lazy"
-      width={900}
-      height={900}
+      width={1920}
+      height={1080}
       placeholder="blur"
       quality={100}
+      sizes="100vw"
       blurDataURL={urlFor(src).blur(10).quality(10).url()}
     />
   );
