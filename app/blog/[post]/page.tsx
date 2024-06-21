@@ -108,8 +108,11 @@ export default async function Post({ params }: Props) {
       </header>
 
       <article>
-        <Slide className="flex lg:flex-row flex-col relative" delay={0.1}>
-          <div className="min-h-full lg:border-r border-r-0 dark:border-zinc-800 border-zinc-200 basis-3/4 pt-10 pb-4 lg:pr-6 px-0">
+        <Slide
+          className="grid lg:grid-cols-[75%,25%] grid-cols-1 relative"
+          delay={0.1}
+        >
+          <div className="min-h-full lg:border-r border-r-0 dark:border-zinc-800 border-zinc-200 pt-10 pb-4 lg:pr-6 px-0">
             <div className="flex items-center flex-wrap gap-4 text-md mb-8 dark:text-zinc-400 text-zinc-600">
               <div className="flex items-center gap-x-2">
                 <HiCalendar />
@@ -151,7 +154,7 @@ export default async function Post({ params }: Props) {
             </div>
           </div>
 
-          <aside className="flex flex-col lg:max-h-full h-max gap-y-8 sticky top-2 bottom-auto right-0 basis-1/4 py-10 lg:px-6 px-0">
+          <aside className="flex flex-col lg:max-h-full h-max gap-y-8 sticky top-2 bottom-auto right-0 py-10 lg:px-6 px-0">
             <section className="border-b dark:border-zinc-800 border-zinc-200 pb-10">
               <p className="dark:text-zinc-400 text-zinc-500 text-sm">
                 Written By
