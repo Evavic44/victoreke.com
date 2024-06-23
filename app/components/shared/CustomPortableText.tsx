@@ -71,9 +71,7 @@ export const CustomPortableText: PortableTextComponents = {
   },
   marks: {
     em: ({ children }) => (
-      <em className="font-incognito font-semibold dark:text-primary-color text-tertiary-color">
-        {children}
-      </em>
+      <em className="font-incognito font-medium italic">{children}</em>
     ),
     strong: ({ children }) => (
       <strong className="font-bold dark:text-zinc-300 text-zinc-700">
