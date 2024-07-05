@@ -19,20 +19,13 @@ export const CustomPortableTextFavicon: PortableTextComponents = {
   marks: {
     link: ({ children, value }) => {
       return (
-        <a
-          className="font-medium inline-flex items-center justify-start gap-x-1 dark:text-blue-400 text-blue-500 underline"
+        <RefLink
           href={value?.href}
-          rel="noreferrer noopener"
-          target="_blank"
+          className="font-medium inline-flex items-center justify-start gap-x-1 dark:text-blue-400 text-blue-500 underline"
         >
-          <RefLink
-            href={value?.href}
-            className="font-medium inline-flex items-center justify-start gap-x-1 dark:text-blue-400 text-blue-500 underline"
-          >
-            <Favicon domain={value?.href} alt={value?.href} />
-            {children}
-          </RefLink>
-        </a>
+          <Favicon domain={value?.href} alt={value?.href} />
+          {children}
+        </RefLink>
       );
     },
   },

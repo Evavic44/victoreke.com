@@ -9,7 +9,6 @@ import Heroes from "../components/pages/Heroes";
 import Usage from "../components/pages/Usage";
 import { Slide } from "../animation/Slide";
 import { sanityFetch } from "@/lib/sanity.client";
-import PageHeading from "@/app/components/shared/PageHeading";
 import RefLink from "../components/shared/RefLink";
 
 export const metadata: Metadata = {
