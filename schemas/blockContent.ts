@@ -26,7 +26,10 @@ export default defineType({
     }),
     defineArrayMember({
       type: "image",
-      options: { hotspot: true },
+      options: {
+        hotspot: true,
+        metadata: ["lqip", "blurhash", "palette"],
+      },
       fields: [
         {
           name: "caption",
@@ -62,6 +65,7 @@ export default defineType({
           { title: "SCSS", value: "scss" },
           { title: "SQL", value: "sql" },
           { title: "Yaml", value: "yaml" },
+          { title: "Java", value: "java" },
         ],
       },
     }),
