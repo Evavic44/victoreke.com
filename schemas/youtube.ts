@@ -1,12 +1,12 @@
 import { defineField, defineType } from "sanity";
-import { YoutubeWidget } from "@/app/components/shared/YoutubeWidget";
-import { BiLogoYoutube } from "react-icons/bi";
+import { YoutubeWidget } from "@/app/components/widgets/YoutubeWidget";
+import { FiYoutube } from "react-icons/fi";
 
 export const youtube = defineType({
   name: "youtube",
   title: "Youtube",
   type: "object",
-  icon: BiLogoYoutube,
+  icon: FiYoutube,
   fields: [
     defineField({
       name: "title",

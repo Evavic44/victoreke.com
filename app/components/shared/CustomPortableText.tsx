@@ -13,9 +13,8 @@ export const CustomPortableText: PortableTextComponents = {
   types: {
     image: PortableImage,
     code: CodeBlock,
-    youtube: ({ value }: { value: any }) => {
-      const { url } = value;
-      const id = getYoutubeId(url);
+    youtube: ({ value }: { value: { url: string } }) => {
+      const id = getYoutubeId(value.url);
       return <YoutubeIframe videoId={id} />;
     },
     customTable: ({ value }: { value: TableValueProps }) => (

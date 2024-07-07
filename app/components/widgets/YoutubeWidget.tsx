@@ -1,6 +1,6 @@
 import getYoutubeId from "@/app/utils/get-youtubeId";
 import { BiLogoYoutube } from "react-icons/bi";
-import YoutubeIframe from "./YoutubeIframe";
+import YoutubeIframe from "../shared/YoutubeIframe";
 
 export function YoutubeWidget(props: any) {
   const { url, actions, schemaType } = props;
