@@ -6,6 +6,8 @@ import HashScroll from "./HashScroll";
 import getYoutubeId from "@/app/utils/get-youtubeId";
 import YoutubeIframe from "./YoutubeIframe";
 import RefLink from "./RefLink";
+import Table from "./Table";
+import { TableValueProps } from "@/types";
 
 export const CustomPortableText: PortableTextComponents = {
   types: {
@@ -16,6 +18,9 @@ export const CustomPortableText: PortableTextComponents = {
       const id = getYoutubeId(url);
       return <YoutubeIframe videoId={id} />;
     },
+    customTable: ({ value }: { value: TableValueProps }) => (
+      <Table value={value} />
+    ),
   },
 
   block: {
