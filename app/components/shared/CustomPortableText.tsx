@@ -7,7 +7,8 @@ import getYoutubeId from "@/app/utils/get-youtubeId";
 import YoutubeIframe from "./YoutubeIframe";
 import RefLink from "./RefLink";
 import Table from "./Table";
-import { TableValueProps } from "@/types";
+import { QuizValueProps, TableValueProps } from "@/types";
+import Quiz from "./Quiz";
 
 export const CustomPortableText: PortableTextComponents = {
   types: {
@@ -20,6 +21,7 @@ export const CustomPortableText: PortableTextComponents = {
     customTable: ({ value }: { value: TableValueProps }) => (
       <Table value={value} />
     ),
+    quiz: ({ value }: { value: QuizValueProps }) => <Quiz value={value} />,
   },
 
   block: {

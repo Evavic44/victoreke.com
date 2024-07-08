@@ -7,6 +7,7 @@ import heroe from "./heroe";
 import { youtube } from "./youtube";
 import { table } from "./table";
 import blockContent from "./blockContent";
+import quiz from "./quiz";
 
 export const schemaTypes = [
   profile,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   blockContent,
   youtube,
   table,
+  quiz,
 ];

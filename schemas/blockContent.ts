@@ -75,5 +75,8 @@ export default defineType({
     defineArrayMember({
       type: "customTable",
     }),
+    defineArrayMember({
+      type: "quiz",
+    }),
   ],
 });
