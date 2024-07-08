@@ -26,6 +26,10 @@ module.exports = {
       gridTemplateColumns: {
         custom: "1.2fr 1fr",
       },
+      gridTemplateRows: {
+        fit: "min-content 0fr",
+        full: "min-content 1fr",
+      },
       backgroundImage: {
         noise:
           "url('https://res.cloudinary.com/victoreke/image/upload/v1691779257/victoreke/noise.png')",

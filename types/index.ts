@@ -11,6 +11,12 @@ export interface TableValueProps {
   caption?: string;
 }
 
+export interface QuizValueProps {
+  _key: string;
+  question: string;
+  answer: string;
+}
+
 export type ProfileType = {
   _id: string;
   fullName: string;

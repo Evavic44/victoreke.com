@@ -8,7 +8,6 @@ type imageProp = {
 };
 
 export default function SampleImageComponent({ value }: imageProp) {
-  console.log(value);
   return (
     <figure className="my-10">
       <ImageComponent src={value} alt={value.alt} />
