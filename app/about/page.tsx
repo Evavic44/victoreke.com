@@ -78,7 +78,7 @@ export default async function About() {
                           View Résumé <BiLinkExternal className="text-base" />
                         </RefLink>
                         <a
-                          href={`${data.resumeURL}?dl=${data.fullName}-resume`}
+                          href={`${data.resumeURL}?dl=${data.fullName}-resume.pdf`}
                           className="flex items-center justify-center text-center dark:text-primary-color text-secondary-color hover:underline basis-[10%] dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 rounded-md py-3 text-lg"
                           title="Download Resume"
                         >
