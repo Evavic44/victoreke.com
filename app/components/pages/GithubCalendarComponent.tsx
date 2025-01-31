@@ -6,7 +6,7 @@ export default function GithubCalendarComponent() {
     <section>
       <Slide delay={0.16} className="mb-8">
         <h2 className="font-incognito text-4xl font-bold tracking-tight">
-          Contrbution Graph
+          Contribution Graph
         </h2>
       </Slide>
 
