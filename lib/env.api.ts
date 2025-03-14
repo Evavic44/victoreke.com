@@ -22,23 +22,23 @@ export const mode = process.env.NODE_ENV;
 export const apiVersion =
   process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2023-07-21";
 
-export const giscusRepoId = checkValue(
-  process.env.NEXT_PUBLIC_GISCUS_REPOID,
-  "NEXT_PUBLIC_GISCUS_REPOID",
-  "https://giscus.app/"
-);
+// export const giscusRepoId = checkValue(
+//   process.env.NEXT_PUBLIC_GISCUS_REPOID,
+//   "NEXT_PUBLIC_GISCUS_REPOID",
+//   "https://giscus.app/"
+// );
 
-export const giscusCategoryId = checkValue(
-  process.env.NEXT_PUBLIC_GISCUS_CATEGORYID,
-  "NEXT_PUBLIC_GISCUS_CATEGORYID",
-  "https://giscus.app/"
-);
+// export const giscusCategoryId = checkValue(
+//   process.env.NEXT_PUBLIC_GISCUS_CATEGORYID,
+//   "NEXT_PUBLIC_GISCUS_CATEGORYID",
+//   "https://giscus.app/"
+// );
 
-export const umamiSiteId = checkValue(
-  process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
-  "NEXT_PUBLIC_UMAMI_WEBSITE_ID",
-  "https://umami.is"
-);
+// export const umamiSiteId = checkValue(
+//   process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
+//   "NEXT_PUBLIC_UMAMI_WEBSITE_ID",
+//   "https://umami.is"
+// );
 
 // Validate env varaibles
 function checkValue<T>(
