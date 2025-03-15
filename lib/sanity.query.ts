@@ -16,7 +16,7 @@ const postField = groq`
   isPublished
 `;
 
-export const profileQuery = groq`*[_type == "profile"]{
+export const profileQuery = groq`*[_type == "profile"][0]{
   _id,
   fullName,
   headline,

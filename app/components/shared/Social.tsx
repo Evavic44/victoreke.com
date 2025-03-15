@@ -1,7 +1,7 @@
 import { socialLinks } from "../../data/social";
 import RefLink from "./RefLink";
 
-export default function Social({ type }: { type: string }) {
+export default function Social({ type }: { type: "social" | "publication" }) {
   return (
     <ul className="flex items-center flex-wrap gap-x-5 gap-y-4 my-10">
       {socialLinks

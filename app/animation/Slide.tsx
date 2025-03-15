@@ -1,16 +1,16 @@
 "use client";
-import { motion, useInView, useAnimation } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation, AnimationProps } from "framer-motion";
+import { useRef, useEffect, RefObject } from "react";
 
-type props = {
+interface SlideProps extends AnimationProps {
   children: React.ReactNode;
-  className?: string;
   delay?: number;
-};
+  className?: string;
+}
 
-export const Slide = ({ children, className, delay }: props) => {
-  const ref = useRef(null);
-  const isInview = useInView(ref, { once: true });
+export const Slide = ({ children, className, delay }: SlideProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInview = useInView(ref as RefObject<Element>, { once: true });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -34,9 +34,8 @@ export const Slide = ({ children, className, delay }: props) => {
       }}
       animate={controls}
       initial="start"
-      className={className}
     >
-      {children}
+      <div className={className}>{children}</div>
     </motion.div>
   );
 };
