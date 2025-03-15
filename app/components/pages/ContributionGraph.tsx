@@ -1,11 +1,12 @@
 "use client";
 import { useTheme } from "next-themes";
 import GitHubCalendar from "react-github-calendar";
-import { espionage, github } from "@/app/data/contribution-graph-theme";
+import { github } from "@/app/data/contribution-graph-theme";
 import { useState, useEffect } from "react";
 import YearButton from "../shared/YearButton";
 import { getGitHubYears } from "@/app/utils/calculate-years";
 import EmptyState from "../shared/EmptyState";
+import { IoIosAnalytics } from "react-icons/io";
 
 export default function ContributionGraph() {
   const [calendarYear, setCalendarYear] = useState<number | undefined>(
@@ -32,6 +33,7 @@ export default function ContributionGraph() {
   if (!username || !joinYear)
     return (
       <EmptyState
+        icon={<IoIosAnalytics />}
         title="Unable to load Contribution Graph"
         message="We could not find any GitHub credentials added to the .env file. To display the graph, provide your username and the year you joined GitHub"
       />

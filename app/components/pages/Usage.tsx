@@ -5,7 +5,7 @@ import { CustomPortableTextFavicon } from "../shared/CustomPortableTextFavicon";
 import { sanityFetch } from "@/lib/sanity.client";
 
 export default async function Usage() {
-  const profile: ProfileType[] = await sanityFetch({
+  const profile: ProfileType = await sanityFetch({
     query: profileQuery,
     tags: ["profile"],
   });
@@ -19,13 +19,10 @@ export default async function Usage() {
           to.
         </p>
       </div>
-      {profile.map((textBlock, id) => (
-        <PortableText
-          key={id}
-          value={textBlock.usage}
-          components={CustomPortableTextFavicon}
-        />
-      ))}
+      <PortableText
+        value={profile?.usage}
+        components={CustomPortableTextFavicon}
+      />
     </section>
   );
 }
