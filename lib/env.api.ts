@@ -34,11 +34,11 @@ export const giscusCategoryId = checkValue(
   "https://giscus.app/"
 );
 
-export const umamiSiteId = checkValue(
-  process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
-  "NEXT_PUBLIC_UMAMI_WEBSITE_ID",
-  "https://umami.is"
-);
+// export const umamiSiteId = checkValue(
+//   process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
+//   "NEXT_PUBLIC_UMAMI_WEBSITE_ID",
+//   "https://umami.is"
+// );
 
 // Validate env varaibles
 function checkValue<T>(

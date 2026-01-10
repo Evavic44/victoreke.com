@@ -1,3 +1,5 @@
+@import "prism.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,8 +7,6 @@
 html {
   scroll-behavior: smooth;
 }
-
-@import "prism.css";
 
 body {
   background-image: url("../../public/noise.png");

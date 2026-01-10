@@ -1,37 +1,7 @@
-import Refractor from "react-refractor";
-import js from "refractor/lang/javascript";
-import ts from "refractor/lang/typescript";
-import tsx from "refractor/lang/tsx";
-import jsx from "refractor/lang/jsx";
-import sql from "refractor/lang/sql";
-import bash from "refractor/lang/bash";
-import markdown from "refractor/lang/markdown";
-import css from "refractor/lang/css";
-import scss from "refractor/lang/scss";
-import python from "refractor/lang/python";
-import html from "refractor/lang/markup";
-import yaml from "refractor/lang/yaml";
-import graphql from "refractor/lang/graphql";
-import json from "refractor/lang/json";
-import java from "refractor/lang/java";
-import Clipoboard from "./Clipoboard";
+// "use client";
 
-// Supported languages: https://prismjs.com/#supported-languages
-Refractor.registerLanguage(js);
-Refractor.registerLanguage(ts);
-Refractor.registerLanguage(jsx);
-Refractor.registerLanguage(tsx);
-Refractor.registerLanguage(sql);
-Refractor.registerLanguage(bash);
-Refractor.registerLanguage(markdown);
-Refractor.registerLanguage(css);
-Refractor.registerLanguage(scss);
-Refractor.registerLanguage(python);
-Refractor.registerLanguage(html);
-Refractor.registerLanguage(yaml);
-Refractor.registerLanguage(graphql);
-Refractor.registerLanguage(json);
-Refractor.registerLanguage(java);
+import { Refractor } from "react-refractor";
+import Clipoboard from "./Clipoboard";
 
 type codeTypes = {
   value: {
